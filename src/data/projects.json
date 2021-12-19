@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Postcart Shop",
+        "link": "https://postcart.netlify.app/"
+    },
+    {
+        "title": "Star Wars Trivia",
+        "link": "http://swapi-trivia.herokuapp.com/"
+    },
+    {
+        "title": "Evening's Kingdom",
+        "link": "https://zachtippit.github.io/evenings-kingdom/"
+    },
+    {
+        "title": "Chat App",
+        "link": "https://tippit-chat-app.herokuapp.com/"
+    },
+    {
+        "title": "Old Portfolio",
+        "link": "https://zachtippit.com"
+    },
+    {
+        "title": "Weather App",
+        "link": "https://tippit-weather-app.herokuapp.com/"
+    },
+    {
+        "title": "Battle Maps",
+        "link": "https://battle-maps.herokuapp.com/"
+    },
+    {
+        "title": "HANSCycle: Senior Design",
+        "link": "https://web1.eng.famu.fsu.edu/me/senior_design/2016/team20/"
+    }
+]

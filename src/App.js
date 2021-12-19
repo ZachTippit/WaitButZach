@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import {TopLogo, Layout, Navbar, Main, ArticleIndex, Footer, NoMatch} from './Components';
+import { BrowserRouter as Router, Routes, Route, Link, useRouteMatch, useParams } from "react-router-dom";
+import useStyles from './Components/styles';
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Router>
+  <div className={classes.app}>
+    <TopLogo />
+    <Navbar />
+  <Routes>
+    <Route path='/' element={<Main />} />
+    <Route path='/articles' element={<ArticleIndex />} />
+  </Routes>
+    <Footer />
+</div>
+</Router>
   );
 }
 
