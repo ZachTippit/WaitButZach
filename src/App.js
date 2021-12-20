@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {TopLogo, Layout, Navbar, Main, ArticleIndex, Footer, NoMatch} from './Components';
+import {TopLogo, Layout, Navbar, Main, ArticleIndex, Projects, Footer, NoMatch} from './Components';
 import { BrowserRouter as Router, Routes, Route, Link, useRouteMatch, useParams } from "react-router-dom";
 import useStyles from './Components/styles';
 
@@ -14,6 +14,7 @@ function App() {
   <Routes>
     <Route path='/' element={<Main />} />
     <Route path='/articles' element={<ArticleIndex />} />
+    <Route path='/projects' element={<Projects />} />
   </Routes>
     <Footer />
 </div>

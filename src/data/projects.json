@@ -1,34 +1,56 @@
 [
     {
         "title": "Postcart Shop",
-        "link": "https://postcart.netlify.app/"
+        "link": "https://postcart.netlify.app/",
+        "tech": ["React", "Node.js", "MUI", "chec.js", "Stripe", "Netlify"],
+        "description": "React & Material UI-based e-commerce shop for a potential business idea. Also leverages commerce.js and Stripe.",
+        "pic": "../assets/images/postcart.PNG"
     },
     {
         "title": "Star Wars Trivia",
-        "link": "http://swapi-trivia.herokuapp.com/"
+        "link": "http://swapi-trivia.herokuapp.com/",
+        "tech": ["React", "Node.js", "Tachyons", "Heroku"],
+        "description": "Single page app trivia game built on React and Node using the Star Wars API.",
+        "pic": "../assets/images/swapi.PNG"
     },
     {
         "title": "Evening's Kingdom",
-        "link": "https://zachtippit.github.io/evenings-kingdom/"
+        "link": "https://zachtippit.github.io/evenings-kingdom/",
+        "tech": ["React", "Node.js", "MUI", "ConvertKit"],
+        "description": "React & MUI-based site for Paula Schmidt's fantasy series, Evening's Kingdom. By working with the author, we are adding marketing automation tools and analytics in the next update.",
+        "pic": "../assets/images/eveningskingdom.PNG"
     },
     {
         "title": "Chat App",
-        "link": "https://tippit-chat-app.herokuapp.com/"
+        "link": "https://tippit-chat-app.herokuapp.com/",
+        "tech": ["Node.js", "Socket.io", "Heroku"],
+        "description": "Chat app built on Node.js with socket.io as the corresponding chat API.",
+        "pic": "../assets/images/chatapp.PNG"
     },
     {
         "title": "Old Portfolio",
-        "link": "https://zachtippit.com"
+        "link": "https://zachtippit.com",
+        "tech": ["Node.js", "Handlebars"],
+        "pic": "../assets/images/old.PNG"
     },
     {
         "title": "Weather App",
-        "link": "https://tippit-weather-app.herokuapp.com/"
+        "link": "https://tippit-weather-app.herokuapp.com/",
+        "tech": ["React", "Node.js", "Weatherstack", "Google Maps Platform", "Heroku"],
+        "description": "Pulls weather data based on user-input location from Weatherstack API.",
+        "pic": "../assets/images/weather.PNG"
     },
     {
         "title": "Battle Maps",
-        "link": "https://battle-maps.herokuapp.com/"
+        "link": "https://battle-maps.herokuapp.com/",
+        "tech": ["React", "AntD", "Node.js", "Heroku"],
+        "description": "Learn more about the most influential battles in history using the Google Maps and Wikipedia APIs.",
+        "pic": "../assets/images/battlemap.PNG"
     },
     {
         "title": "HANSCycle: Senior Design",
-        "link": "https://web1.eng.famu.fsu.edu/me/senior_design/2016/team20/"
+        "link": "https://web1.eng.famu.fsu.edu/me/senior_design/2016/team20/",
+        "tech": ["HTML", "CSS", "SolidWorks"],
+        "pic": "../assets/images/hanscycle.PNG"
     }
 ]

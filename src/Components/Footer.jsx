@@ -1,118 +1,63 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import { AppBar, Box, Container, Toolbar, Typography, IconButton, InputBase, Menu, MenuItem, Button } from '@mui/material'
-import  SearchIcon from '@mui/icons-material/Search';
-import  MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
+import { Box, Stack, Typography, Link } from '@mui/material'
 
 import useStyles from './styles';
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+const socials = [
+  {
+    title: 'Github',
+    link: 'https://github.com/ZachTippit'
   },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
+  {
+    title: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/zachtippit/'
   },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
+  {
+    title: 'Instagram',
+    link: 'https://www.instagram.com/zach_tippit/'
   },
-}));
+]
 
-const pages = ['Socials', 'Contact Us!'];
 
 const Footer = () => {
 
-    const classes = useStyles();
+  const classes = useStyles();
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <Menu
-              id="menu-appbar"
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+    <div className={classes.footer}>
+        {/* Desktop Render */}
+        <Box
+          sx={{
+            display: {xs: 'none', sm: 'none', md: 'flex'},
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            alignSelf: 'center'
+          }}
+        >
+          <Box alignSelf='center'>
+            <Link href='/'>Contact</Link>
           </Box>
-          <Typography variant='h6' align='center' style={{paddingLeft: '2rem', paddingRight: '2rem'}}>(C) 2021 by Zach Tippit</Typography>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+          <Box alignSelf='center'>
+            <p style={{color:'white'}}>©2021 Zach Tippit</p>
+          </Box>
+          <Box alignSelf='center'>
+            {socials.map(social => (
+              <Link href={social.link}><Typography align='center' variant='body2'>{social.title}</Typography></Link>
             ))}
           </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-        </Toolbar>
-      </Container>
-    </AppBar>
+      </Box>
+
+      {/* Mobile Render */}
+      <Stack sx={{ display: { sm: 'flex', md: 'none'}}} direction="column" justifyContent="center" alignItems="center">
+        <Link href='/'>Contact</Link>
+        <Typography variant='body2' style={{color:'white'}}>©2021 Zach Tippit</Typography>
+        <div>
+          {socials.map(social => (
+            <Link href={social.link}><Typography align='center' variant='body2'>{social.title}</Typography></Link>
+          ))}
+        </div>
+      </Stack>
+    </div>
   );
 }
 

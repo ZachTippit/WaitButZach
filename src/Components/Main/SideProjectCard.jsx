@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Paper, List, ListItem, ListSubheader, ListItemButton, ListItemText, Link } from '@mui/material';
-import * as Projects from '../../data/projects.json';
+import * as data from '../../data/projects';
 import useStyles from '../styles'
 
-const projects = Projects.default;
+const projects = data.default;
 
 const SideProjectCard = () => {
 

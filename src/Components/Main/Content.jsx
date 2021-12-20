@@ -2,6 +2,7 @@ import React from 'react'
 import ContentCard from './ContentCard'
 import * as data from '../../data/content.json'
 import useStyles from '../styles'
+import { Typography } from '@mui/material'
 
 let contentArray = data.default;
 
@@ -11,7 +12,7 @@ const Content = () => {
     return (
         <div>
             <div className={classes.articlesHeader}>
-                <h2>Articles</h2>
+                <Typography variant='h4' className={classes.articleText}>Articles</Typography>
             </div>
             
             { contentArray.map(content => ( <ContentCard articlePic={content.articlePic} title={content.title} /> ))}

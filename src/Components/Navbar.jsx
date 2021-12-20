@@ -10,7 +10,7 @@ import useStyles from './styles';
 const pages = [
   { title: 'About', link: '/' },
   { title: 'Articles', link: '/articles' },
-  { title: 'Projects', link: '/' },
+  { title: 'Projects', link: '/projects' },
   { title: 'Reading List', link: '/' },
   { title: 'Contact', link: '/' }
 ];
@@ -30,10 +30,10 @@ export default function Navbar() {
     };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <IconButton size="large" aria-label="home-button" component={Link} href='/' color="inherit" style={{marginRight: '4rem'}}>
+          <IconButton size="large" aria-label="home-button" component={Link} href='/' color="inherit" style={{marginRight: '1rem'}}>
             <HomeIcon />
           </IconButton>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -48,8 +48,8 @@ export default function Navbar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem component={Link} href={page.link} key={page.title} onClick={handleCloseNavMenu} >
-                  <Typography textAlign="center">{page.title}</Typography>
+                <MenuItem component={Link} href={page.link} key={page.title} onClick={handleCloseNavMenu} className={classes.w100}>
+                  <Typography align="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -69,12 +69,13 @@ export default function Navbar() {
               </div>
             ))}
           </Box>
-          <Search>
+          {/* Search bar to be implemented */}
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
-          </Search>
+          </Search> */}
         </Toolbar>
       </Container>
     </AppBar>

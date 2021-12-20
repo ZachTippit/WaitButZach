@@ -1,6 +1,6 @@
 import React from 'react'
 import SideSignUp from '../Main/SideSignUp'
-import ExtraCauses from '..Main/ExtraCauses'
+import ExtraCauses from '../Main/ExtraCauses'
 import { Button, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
