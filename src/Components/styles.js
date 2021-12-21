@@ -138,7 +138,8 @@ export default makeStyles((theme) => ({
     },
 
     emailInput: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        margin: 'auto'
     },
 
     sidebarCard: {
