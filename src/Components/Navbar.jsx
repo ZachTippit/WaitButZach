@@ -8,11 +8,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import useStyles from './styles';
 
 const pages = [
-  { title: 'About', link: '/' },
+  { title: 'About', link: '/about' },
   { title: 'Articles', link: '/articles' },
   { title: 'Projects', link: '/projects' },
   { title: 'Reading List', link: '/' },
-  { title: 'Contact', link: '/' }
+  { title: 'Contact', link: '/contact' }
 ];
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
     };
 
   return (
-    <AppBar position="static" className={classes.navbar}>
+    <AppBar position="static" style={{background: '#333'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <IconButton size="large" aria-label="home-button" component={Link} href='/' color="inherit" style={{marginRight: '1rem'}}>

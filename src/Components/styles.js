@@ -50,7 +50,7 @@ export default makeStyles((theme) => ({
     // Navbar
 
     navbar: {
-        backgroundColor: 'black'
+        background: 'black'
     },
 
     homeBtn: {
@@ -82,12 +82,6 @@ export default makeStyles((theme) => ({
 
     // Main > Content
 
-    articlesHeader: {
-        paddingLeft: '2rem',
-        width: '80%',
-        borderBottom: "#3A84C5 6px solid"
-    },
-
     contentCard: {
         width: '100%',
         padding: '20px',
@@ -106,7 +100,7 @@ export default makeStyles((theme) => ({
     // Main > Sidebar
 
     sidebar: {
-        height: '60vh',
+        height: '100%',
         borderLeft: '2px black dotted',
         paddingLeft: '2rem',
         paddingRight: '2rem',
@@ -153,7 +147,57 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
     },
 
+    margin4rem: {
+        marginBottom: '4rem'
+    },
 
+
+
+    // About
+
+    about: {
+        width: '80%',
+        margin: 'auto',
+        minHeight: '60vh',
+        paddingTop: '4rem',
+        paddingBottom: '4rem',
+        [theme.breakpoints.down('md')]: {
+            minHeight: '90vh',  
+        }
+    },
+
+    aboutImg: {
+        display: 'block',
+        margin: 'auto',
+        maxWidth: '100%',
+
+    },
+
+    aboutText: {
+        paddingLeft: '2rem',
+        display: 'flex',
+        direction: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start'
+    },
+
+    aboutBtnContainer: {
+        width: '100%',
+        margin: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'space-between'
+    },
+
+    aboutBtn: {
+        display: 'block',
+        marginTop: '2rem'
+    },
+
+    aboutSocialBtn: {
+        textAlign: 'center',
+    },
 
     // Articles
 
@@ -169,7 +213,6 @@ export default makeStyles((theme) => ({
         paddingLeft: '2rem',
         width: '80%',
         borderBottom: "#3A84C5 6px solid",
-        marginTop: '2rem',
         marginBottom: '2rem'
     },
 
@@ -206,14 +249,15 @@ export default makeStyles((theme) => ({
     // Projects
 
     projects: {
-        minHeight: '70vh'
+        minHeight: '70vh',
+        paddingBottom: '2rem'
     },
 
     prjHeader:{
         paddingLeft: '2rem',
         width: '80%',
         borderBottom: "#3A84C5 6px solid",
-        marginTop: '2rem',
+        paddingTop: '2rem',
         marginBottom: '2rem'
     },
 
@@ -234,6 +278,26 @@ export default makeStyles((theme) => ({
         width: '100%',
         margin: 'auto'
     },
+
+    projectCardText: {
+        paddingLeft: '2rem'
+    },
+
+
+
+    // Contact
+
+    contactContainer: {
+        width: '80%',
+        margin: 'auto',
+        marginTop: '2rem',
+        marginBottom: '4rem',
+    },
+
+    contactForm: {
+
+    },
+
 
     // Footer
 

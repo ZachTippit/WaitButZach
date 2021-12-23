@@ -95,14 +95,24 @@ const Projects = () => {
                     <Typography>{content.title}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Grid container spacing={2}>
-                            <Grid item xs={3}>
+                        <Grid container spacing={2}
+                          sx={{ flexDirection: { xs: 'column', sm: "column", md: "row"} }}
+                        >
+                            <Grid item xs={12} sm={12} md={4}>
                                 <img src={content.pic} className={classes.projectPic}/>
                             </Grid>
-                            <Grid item xs={9}>
-                                {content.tech.map(tech => (<img src={badgeMaker(tech)}/>))}
-                                <Typography>{content.description}</Typography>
+                            <Grid item xs={12} sm={12} md={4}>
+                              <div className={classes.projectCardText}>
+                                <Typography gutterBottom variant='h5'><b>{content.title}</b></Typography>
+                                <Typography variant='body1'>{content.description}</Typography>
                                 <Link href={content.link}>Check out the project here!</Link>
+                              </div>
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={4}>
+                              <div className={classes.projectCardText}>
+                                <Typography gutterBottom variant='h5'><b>Tech Used</b></Typography>
+                                {content.tech.map(tech => (<img src={badgeMaker(tech)} style={{padding: '0.25rem'}}/>))}
+                              </div>
                             </Grid>
                         </Grid>
                         
