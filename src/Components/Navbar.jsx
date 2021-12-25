@@ -8,10 +8,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import useStyles from './styles';
 
 const pages = [
+  { title: 'Home', link: '/' },
   { title: 'About', link: '/about' },
   { title: 'Articles', link: '/articles' },
   { title: 'Projects', link: '/projects' },
-  { title: 'Reading List', link: '/' },
+  { title: 'Reading List', link: '/reading' },
   { title: 'Contact', link: '/contact' }
 ];
 
@@ -33,9 +34,6 @@ export default function Navbar() {
     <AppBar position="static" style={{background: '#333'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <IconButton size="large" aria-label="home-button" component={Link} href='/' color="inherit" style={{marginRight: '1rem'}}>
-            <HomeIcon />
-          </IconButton>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
