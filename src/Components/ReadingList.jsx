@@ -1,58 +1,98 @@
-import React from 'react'
-import { Grid, Stack, Typography } from '@mui/material'
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import SelectsCard from './ReadingList/SelectsCard'
+import AllTime from './ReadingList/AllTime'
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion from '@mui/material/Accordion';
+import MuiAccordionSummary from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import { Typography, Link, Grid } from '@mui/material';
 
+import * as data from '../data/projects.json'
 import useStyles from './styles'
 
-const movies = ['Dune', 'C\'mon C\'mon', 'Spider-Man: No Way Home', 'The Lost Daughter'];
-const books = ['The Mars Trilogy', 'Ham on Rye', '1491/1493', 'The Three Body Problem']
-const shows = ['Mare of Eastown', 'Hawkeye', 'It\'s Always Sunny', 'Devs']
+let projects = data.default;
+
+
+const Accordion = styled((props) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  '&:not(:last-child)': {
+    borderBottom: 0,
+  },
+  '&:before': {
+    display: 'none',
+  },
+}));
+
+const AccordionSummary = styled((props) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(255, 255, 255, .05)'
+      : 'rgba(0, 0, 0, .03)',
+  flexDirection: 'row-reverse',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(90deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: '1px solid rgba(0, 0, 0, .125)',
+}));
 
 const ReadingList = () => {
-    
+    const [expanded, setExpanded] = React.useState('panel1');
+
+    const handleChange = (panel) => (event, newExpanded) => {
+        setExpanded(newExpanded ? panel : false);
+    }
+
     const classes = useStyles();
-    
-    return (
-        <div>
-            <Typography gutterBottom variant='h4' align='center'>Recommendations</Typography>
-            <Typography variant='body1' align='center'>Here are a few things I thought you'd like.</Typography>
-            <Grid container
-                    display='flex'
-                    spacing={6}
-                    sx={{pt: 5, pb: 5}}
-                >
-                <Grid item xs={12} sm={12} md={6} lg={4}>
-                    <Typography gutterBottom variant='h4' align='center'>MOVIES</Typography>
-                    <ul>
-                        {movies.map((movie) => (
-                            <li>
-                                <Typography variant='h6' align='center' >{movie}</Typography>
-                            </li>
-                        ))}
-                    </ul>
-                </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={4}>
-                    <Typography gutterBottom variant='h4' align='center'>BOOKS</Typography>
-                    <ul>
-                        {books.map((book) => (
-                            <li>
-                                <Typography variant='h6' align='center' >{book}</Typography>
-                            </li>
-                        ))}
-                    </ul>
-                </Grid>
-                <Grid item xs={12} sm={12} md={6} lg={4}>
-                    <Typography gutterBottom variant='h4' align='center'>TV SHOWS</Typography>
-                    <ul>
-                        {shows.map((show) => (
-                            <li>
-                                <Typography variant='h6' align='center' >{show}</Typography>
-                            </li>
-                        ))}
-                    </ul>
-                </Grid>
-        </Grid>
+
+    return(
+        <div className={classes.readingList}>
+            <div className={classes.prjHeader}>
+                <Typography variant='h4' className={classes.prjText}>Reading List</Typography>
+            </div>
+                <Typography variant='body1' className={classes.prjSubhead}>These have all been created in 2021 with the exception of the HANSCycle project. Used technologies are listed in each. Reach out if you have any questions/want to know more!</Typography>
+
+            
+                <Accordion expanded={expanded === '2021_Selects'} onChange={handleChange('2021_Selects')}>
+                    <AccordionSummary aria-controls={'2021_Selects-content'} id={'2021_Selects-header'}>
+                    <Typography><b>2021 Selects</b></Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
+                        <SelectsCard />
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
+                    <AccordionSummary aria-controls={'Recommendations-content'} id={'Recommendations-header'}>
+                    <Typography><b>General Recommendations</b></Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
+                        
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'All-Time'} onChange={handleChange('All-Time')}>
+                    <AccordionSummary aria-controls={'All-Time-content'} id={'All-Time-header'}>
+                    <Typography><b>All-Time Favorites</b></Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
+                        <AllTime />
+                    </AccordionDetails>
+                </Accordion>
         </div>
     )
 }
 
-export default ReadingList
+export default ReadingList;

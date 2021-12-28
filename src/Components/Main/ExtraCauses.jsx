@@ -1,4 +1,5 @@
 import React from 'react'
+import { Typography } from '@mui/material'
 import useStyles from '../styles'
 
 const ExtraCauses = () => {
@@ -6,8 +7,10 @@ const ExtraCauses = () => {
 
     return (
         <div className={classes.extraCausesContainer}>
-            <h3>Impressed?</h3>
-            <p>Don't buy me a coffee -- contribute to something helpful instead.</p>
+            <div className={classes.coffeeHeader}>
+                <Typography variant='h5' className={classes.coffeeText}>Don't Buy Me a Coffee</Typography>
+            </div>
+            <p>Please do not fund my caffeine addiction any further. Contribute to something helpful instead!</p>
             <ul>
                 <li><a href='https://www.globalgiving.org/projects/afghanistan-emergency-fund/projects/#menu'>Afghanistan Emergency Fund</a></li>
                 <li><a href='https://www.plannedparenthood.org/get-involved/other-ways-give'>Planned Parenthood</a></li>

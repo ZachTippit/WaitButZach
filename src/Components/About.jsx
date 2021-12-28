@@ -1,4 +1,6 @@
 import React from 'react'
+import ExtraCauses from './Main/ExtraCauses'
+import SideProjectCard from './Main/SideProjectCard';
 import { Grid, Typography, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
@@ -26,23 +28,23 @@ const About = () => {
     return (
         <div className={classes.about}>
             <Grid container
-                display={{xs: 'none', sm: 'none', md: 'flex'}}
+                display='flex'
                 spacing={4}
                 alignItems="center"
             >
-                <Grid item md={6}>
+                <Grid item xs={12} sm={12} md={6}>
                     <img className={classes.aboutImg} src={AboutImg} alt='This is a picture of me!' />
                 </Grid>
-                <Grid container md={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
-                    <Grid item md={12}>
-                        <Typography gutterBottom variant='h6' fullWidth>{aboutInfo.header}</Typography>
+                <Grid container xs={12} sm={12} md={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
+                    <Grid item xs={12}>
+                        <Typography gutterBottom variant='h4' align='center' fullWidth>{aboutInfo.header}</Typography>
                     </Grid>
-                    <Grid item md={12}>
+                    <Grid item xs={12} sx={{pt: 2}}>
                         <Typography variant='body1'>{aboutInfo.text}</Typography>
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid container
+            {/* <Grid container
                 display={{xs: 'flex', sm: 'flex', md: 'none'}}
                 spacing = {2}
                 alignItems="center"
@@ -55,7 +57,7 @@ const About = () => {
                     <Typography variant='h6'>{aboutInfo.header}</Typography>
                     <Typography variant='body1'>{aboutInfo.text}</Typography>
                 </Grid>
-            </Grid>
+            </Grid> */}
             <div className={classes.aboutBtnContainer}>
                 <div className={classes.aboutBtn}>
                     <ColorButton fullWidth className={classes.aboutBtn} variant="contained" size='large'><b>Download Resume (pdf)</b></ColorButton>
@@ -80,6 +82,14 @@ const About = () => {
                     <ColorButton className={classes.aboutBtn} fullWidth variant="contained" size='large'><b>Random Post Button</b></ColorButton>
                 </div>
             </div>
+            <Grid container direction='row' justifyContent='center' alignItems="center" spacing={3} sx={{mt: 4}}>
+                <Grid item xs={12} sm={12} md={6}>
+                    <ExtraCauses />
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
+                    <SideProjectCard />
+                </Grid>
+            </Grid>
         </div>
     )
 }

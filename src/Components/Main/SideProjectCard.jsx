@@ -9,8 +9,6 @@ const SideProjectCard = () => {
 
     const classes = useStyles();
 
-    console.log(projects);
-
     return (
         <Paper className={classes.sidePrjCard}>
             <List 

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Grid, Typography } from '@mui/material'
+import Dune from '../../img/selects/dune.png'
+import { Grid, Typography, Link } from '@mui/material'
 import useStyles from '../styles'
 
 const ContentCard = ({articlePic, title, commentBtnCount}) => {
@@ -7,11 +8,9 @@ const ContentCard = ({articlePic, title, commentBtnCount}) => {
 
     return (
         <div className={classes.contentCard}>
-            <Grid container direction="row" justifyContent="space-between" alignItems="center">
+            <Grid container direction="row" justifyContent="space-between" alignItems="center" component={Link} href='/' style={{textDecoration: 'none', color: '#333'}}>
                 <Grid item xs={4} zeroMinWidth>
-                    <Typography variant='body1' align='center' noWrap>
-                        {articlePic}
-                    </Typography>
+                    <img src={Dune} alt='Image' className={classes.contentPic}/>
                 </Grid>
                 <Grid item xs>
                     <h4>{title}</h4>

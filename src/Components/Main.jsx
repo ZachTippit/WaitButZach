@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Grid } from '@material-ui/core'
+import { Typography, Grid, Link } from '@material-ui/core'
 import Content  from './Main/Content'
 import Sidebar from './Main/Sidebar'
 import Footer from './Footer'
@@ -10,7 +10,7 @@ const Main = () => {
     
     return (
         <>
-            <Grid container className={classes.mainContainer}>
+            <Grid container className={classes.mainContainer} spacing={4}>
                 <Grid item lg={8} md={12} sm={12} xs={12}>
                     <Content />
                 </Grid>

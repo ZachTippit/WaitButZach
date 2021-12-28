@@ -55,39 +55,11 @@ const Contact = () => {
                         </Grid>
                     </Grid>
                 </form>
-                <Grid container
-                    display={{xs: 'none', sm: 'none', md: 'flex'}}
-                    direction='row'
-                    justifyContent='center'
-                    alignItems="center"
-                    spacing={3}
-                    sx={{mt: 4}}
-                    >
-                        <Grid item md={6}>
-                            <div className={classes.articlesHeader}>
-                                <Typography variant='h6' className={classes.articleText}>Don't Buy Me a Coffee</Typography>
-                            </div>
+                <Grid container direction='row' justifyContent='center' alignItems="center" spacing={3} sx={{mt: 4}}>
+                        <Grid item xs={12} sm={12} md={6}>
                             <ExtraCauses />
                         </Grid>
-                        <Grid item md={6}>
-                        <div className={classes.articlesHeader}>
-                                <Typography variant='h6' className={classes.articleText}>Project Quick Links</Typography>
-                            </div>
-                            <SideProjectCard />
-                        </Grid>
-                </Grid>
-                <Grid container
-                    display={{xs: 'flex', sm: 'flex', md: 'none'}}
-                    direction='column'
-                    justifyContent='center'
-                    alignItems="center"
-                    spacing={3}
-                    sx={{mt: 4}}
-                    >
-                        <Grid item sm={12}>
-                            <ExtraCauses />
-                        </Grid>
-                        <Grid item sm={12} alignSelf='center'>
+                        <Grid item xs={12} sm={12} md={6}>
                             <SideProjectCard />
                         </Grid>
                 </Grid>

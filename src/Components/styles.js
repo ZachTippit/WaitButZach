@@ -1,33 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+//  Quick Reference Colors: 
+
+//      Header/text background color:   #000d35
+//      Navbar/Footer color:            #555
+//      
+
+
 export default makeStyles((theme) => ({ 
     app: {
         maxWidth: '1400px',
         margin: 'auto',
-    },
-
-    
-
-    centerDiv: {
-        margin: 'auto'
-    },
-
-    w70: {
-        width: '70%'
-    },
-
-    blueBG: {
-        backgroundColor: 'blue',
-        height: '60vh'
-    },
-
-    greenBG: {
-        backgroundColor: 'green',
-        height: '60vh'
-    },
-
-    w100: {
-        width: '100%'
+        overflowX: 'hidden'
     },
 
     // Top Image
@@ -43,7 +27,7 @@ export default makeStyles((theme) => ({
     topLogoIMG: {
         maxHeight: '150px',
         width: '300px',
-        paddingLeft: '10%',
+        margin: 'auto',
         paddingBottom: '0'   
     },
 
@@ -78,14 +62,46 @@ export default makeStyles((theme) => ({
         
     },
 
-
-
     // Main > Content
+
+    featuredContent: {
+        display: 'block',
+        margin: 'auto',
+        marginBottom: '2rem'
+    },
+
+    featuredContentPic: {
+        display: 'block',
+        margin: 'auto',
+        width: '40%',
+        paddingBottom: '1.5rem'
+    },
+
+    featuredContentDescription: {
+        minWidth: '200px',
+        width: '60%',
+        margin: 'auto',
+        paddingTop: '0.5rem',
+        height: '50px',
+        overflow: 'hidden'
+    },
 
     contentCard: {
         width: '100%',
         padding: '20px',
         margin: 'auto',
+        paddingTop: '1rem',
+        paddingBottom: '1rem',
+        borderBottom: 'black 1px solid',
+        transition: '0.5s ease-in-out',
+        '&:hover': {
+            cursor: 'pointer',
+            backgroundColor: 'rgba(30,30,30,0.5)',
+        }
+    },
+
+    contentPic: {
+        width: '100%',
     },
 
     btmContentBorder: {
@@ -109,25 +125,28 @@ export default makeStyles((theme) => ({
 
     sidebarHeader: {
         paddingLeft: '1.5rem',
-        width: '80%',
+        width: '100%',
         borderBottom: "#3A84C5 6px solid",
         marginBottom: '1.5rem'
     },
 
     sidePrjCard: {
-        width: '400px',
+        display: 'block',
+        width: '100%',
         overflow: 'auto',
-        maxHeight: '200px'
+        maxHeight: '300px',
+        alignItems: "center",
+        justifyContent: "center"
     },
 
     signUpCard: {
-        width: '400px',
+        width: '100%',
         backgroundColor: 'lightgreen',
         margin: 'auto'
     },
 
     extraCausesContainer: {
-        width: '400px',
+        width: '100%',
         margin: 'auto'
     },
 
@@ -137,7 +156,7 @@ export default makeStyles((theme) => ({
     },
 
     sidebarCard: {
-        width: '400px',
+        width: '100%',
         margin: 'auto'
     },
 
@@ -149,6 +168,20 @@ export default makeStyles((theme) => ({
 
     margin4rem: {
         marginBottom: '4rem'
+    },
+
+    coffeeHeader: {
+        paddingLeft: '2rem',
+        width: '80%',
+        borderBottom: "#000d35 6px solid",
+        marginBottom: '2rem'
+    },
+    
+    coffeeText: {
+        backgroundColor: '#000d35',
+        color: 'white',
+        width: 'fit-content',
+        padding: '0.25rem'
     },
 
 
@@ -212,7 +245,7 @@ export default makeStyles((theme) => ({
     articlesHeader: {
         paddingLeft: '2rem',
         width: '80%',
-        borderBottom: "#3A84C5 6px solid",
+        borderBottom: "#000d35 6px solid",
         marginBottom: '2rem'
     },
 
@@ -220,14 +253,18 @@ export default makeStyles((theme) => ({
         width: '80%',
         padding: '20px',
         margin: 'auto',
-        paddingTop: '0.5rem',
-        paddingBottom: '0.5rem',
+        paddingTop: '1rem',
+        paddingBottom: '1rem',
         borderBottom: 'black 1px solid',
-        marginBottom: '0.5rem'
+        transition: '0.5s ease-in-out',
+        '&:hover': {
+            cursor: 'pointer',
+            backgroundColor: 'rgba(30,30,30,0.5)',
+        }
     },
 
     articleText: {
-        backgroundColor: '#3A84C5',
+        backgroundColor: '#000d35',
         color: 'white',
         width: 'fit-content',
         padding: '0.25rem'
@@ -241,7 +278,9 @@ export default makeStyles((theme) => ({
 
     emailSignUp_ARTICLE: {
         paddingTop: '2.5rem',
-        paddingBottom: '2.5rem'
+        paddingBottom: '2.5rem',
+        width: '50%',
+        margin: 'auto'
     },
 
 
@@ -256,13 +295,13 @@ export default makeStyles((theme) => ({
     prjHeader:{
         paddingLeft: '2rem',
         width: '80%',
-        borderBottom: "#3A84C5 6px solid",
+        borderBottom: "#000d35 6px solid",
         paddingTop: '2rem',
         marginBottom: '2rem'
     },
 
     prjText: {
-        backgroundColor: '#3A84C5',
+        backgroundColor: '#000d35',
         color: 'white',
         width: 'fit-content',
         padding: '0.25rem'
@@ -299,6 +338,116 @@ export default makeStyles((theme) => ({
     },
 
 
+    // Reading List
+    readingList: {
+        minHeight: '60vh',
+        paddingBottom: '2rem'
+    },
+
+    topPhoto: {
+        width: '300px',
+        margin: 'auto',
+    },
+
+    runnerUpPhoto: {
+        width: '250px',
+    },
+
+    selectPhotoContainer: {
+        margin: 'auto',
+        marginBottom: '2rem',
+        position: 'relative',
+        '&:hover': {
+                 opacity: "1"
+        }
+    },
+
+    winner: {
+        width: '300px',
+        height: '300px'
+    },
+
+    runnerUp: {
+        width: '250px',
+        height: '250px'
+    },
+
+    selectPhoto: {
+        display: 'block',
+        width: '100%',
+        height: '100%',
+        transition: '0.5s ease-in-out',
+        '&:hover' : {
+            filter: 'blur(3px)'
+        }
+    },
+
+    selectPhotoOverlay: {
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        backgroundColor: '#444',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        opacity: 0,
+        transition: '0.5s ease',
+        '&:hover': {
+            opacity: '0.7',
+        }
+    },
+
+    selectPhotoText: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        color: 'white'
+    },
+
+    allTimePhoto: {
+        display: 'block',
+        width: '100%',
+        height: '100%',
+        transition: '0.5s ease-in-out',
+        '&:hover' : {
+            filter: 'blur(3px)'
+        }
+    },
+
+    allTimePhotoContainer: {
+        margin: 'auto',
+        marginBottom: '2rem',
+        position: 'relative',
+        '&:hover': {
+                 opacity: "1"
+        }
+    },
+
+    allTimePhotoOverlay: {
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        backgroundColor: '#444',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        opacity: 0.7,
+        transition: '0.5s ease',
+        '&:hover': {
+            opacity: '0',
+        }
+    },
+
+    allTimeText: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        color: 'white',
+    },
     // Footer
 
     footer: {

@@ -92,7 +92,7 @@ const Projects = () => {
             { projects.map((content, index) => ( 
                 <Accordion expanded={expanded === `panel${index+1}`} onChange={handleChange(`panel${index+1}`)}>
                     <AccordionSummary aria-controls={`panel${index+1}-content`} id={`panel${index+1}-header`}>
-                    <Typography>{content.title}</Typography>
+                    <Typography><b>{content.title}</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Grid container spacing={2}
