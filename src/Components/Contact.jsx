@@ -4,7 +4,7 @@ import SideProjectCard from './Main/SideProjectCard'
 import { Typography, TextField, Grid, Button, Checkbox, FormGroup, FormControlLabel } from '@mui/material';
 import clsx from 'clsx';
 import { useForm } from 'react-hook-form';
-import { addSubscriber } from '../lib/email.js';
+import { handleAddSubscriber } from '../lib/email.js';
 
 import useStyles from './styles';
 
@@ -15,7 +15,7 @@ const Contact = () => {
     const [ isRegistered, setIsRegistered ] = useState(false);
 
     const onSubmit = async (data, e) => {
-        setIsRegistered(await addSubscriber(data));
+        setIsRegistered(await handleAddSubscriber(data));
     }
 
     const onError = (errors, e) => console.log(errors, e);

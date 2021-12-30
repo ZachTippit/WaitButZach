@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Card, CardActions, CardContent, Button, Typography, TextField, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { addSubscriber, subscriberCount } from '../../lib/email';
+import { handleAddSubscriber, subscriberCount } from '../../lib/email';
 
 import useStyles from '../styles'
 
@@ -23,7 +23,7 @@ const SideSignUp = () => {
     const classes = useStyles();
 
     const emailSubmit = async (data, e) => {
-        setIsRegistered(await addSubscriber(data));
+        setIsRegistered(await handleAddSubscriber(data));
     }
 
     const onError = (errors, e) => console.log(errors, e);

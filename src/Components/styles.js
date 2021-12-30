@@ -269,8 +269,6 @@ export default makeStyles((theme) => ({
     aboutSocialBtn: {
         width: '33%',
         textAlign: 'center',
-        paddingLeft: '2rem',
-        paddingRight: '2rem'
     },
 
     // Articles
