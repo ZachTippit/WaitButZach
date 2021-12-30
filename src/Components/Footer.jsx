@@ -85,8 +85,7 @@ const Footer = () => {
 
       {/* Mobile Render */}
       <Stack sx={{ display: { sm: 'flex', md: 'none'}}} direction="column" justifyContent="center" alignItems="center">
-        <Link href='/contact'>Contact</Link>
-        <Typography variant='body2' style={{color:'white'}}>©2021 Zach Tippit</Typography>
+        <Link href='/contact' sx={{pt: 1}}>Contact</Link>
         <Box alignSelf='center' sx={{pt: 1}}>
             <div className={classes.socialBtnContainer}>
                 <div className={classes.aboutSocialBtn}>
@@ -112,6 +111,7 @@ const Footer = () => {
                 </div>
             </div>
           </Box>
+          <Typography sx={{pt: 1, pb: 1}} variant='body2' style={{color:'white'}}>©2021 Zach Tippit</Typography>
           {/* {socials.map(social => (
             <Link href={social.link}><Typography align='center' variant='body2'>{social.title}</Typography></Link>
           ))} */}
