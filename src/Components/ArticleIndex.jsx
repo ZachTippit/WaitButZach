@@ -1,11 +1,11 @@
 import React from 'react'
 import ArticleCard from './Article/ArticleCard'
 import { Typography } from '@mui/material'
-import * as data from '../data/content.json'
+import { content } from '../data/content'
 import useStyles from './styles'
 import SideSignUp from './Main/SideSignUp';
 
-let contentArray = data.default;
+let contentArray = content;
 
 const ArticleIndex = () => {
     const classes = useStyles();
@@ -16,7 +16,7 @@ const ArticleIndex = () => {
                 <Typography variant='h4' className={classes.articleText}>Articles</Typography>
             </div>
             
-            { contentArray.map(content => ( <ArticleCard articlePic={content.articlePic} title={content.title} description={content.description} /> ))}
+            { contentArray.map(content => ( <ArticleCard pic={content.articlePic} title={content.title} description={content.description} date={content.published}/> ))}
             <div className={classes.emailSignUp_ARTICLE}>
                 <SideSignUp />
             </div>

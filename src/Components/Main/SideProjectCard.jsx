@@ -13,7 +13,7 @@ const SideProjectCard = () => {
         <Paper className={classes.sidePrjCard}>
             <List 
                 subheader={
-                    <ListSubheader component="div" id="nested-list-subheader" style={{backgroundColor: 'darkBlue', color: 'white'}}>
+                    <ListSubheader component="div" id="nested-list-subheader" style={{backgroundColor: '#000d35', color: 'white'}}>
                         <b>Portfolio Quick Links</b>
                     </ListSubheader>}
             >

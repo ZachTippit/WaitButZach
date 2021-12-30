@@ -1,10 +1,16 @@
 import React from 'react'
+import { createTheme } from '@mui/material/styles';
 import ExtraCauses from './Main/ExtraCauses'
 import SideProjectCard from './Main/SideProjectCard';
-import { Grid, Typography, Button } from '@mui/material';
+import { Grid, Typography, Button, Box, Link, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
+import { green } from '@mui/material/colors';
 import AboutImg  from '../img/about.png'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
+import clsx from 'clsx';
 
 import useStyles from './styles'
 
@@ -14,10 +20,10 @@ const aboutInfo = {
 }
 
 const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: purple[500],
+    color: theme.palette.getContrastText(green[500]),
+    backgroundColor: green[500],
     '&:hover': {
-      backgroundColor: purple[700],
+      backgroundColor: green[700],
     },
   }));
 
@@ -32,10 +38,10 @@ const About = () => {
                 spacing={4}
                 alignItems="center"
             >
-                <Grid item xs={12} sm={12} md={6}>
+                <Grid item xs={12} sm={12} md={12} lg={6}>
                     <img className={classes.aboutImg} src={AboutImg} alt='This is a picture of me!' />
                 </Grid>
-                <Grid container xs={12} sm={12} md={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
+                <Grid container xs={12} sm={12} md={12} lg={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
                     <Grid item xs={12}>
                         <Typography gutterBottom variant='h4' align='center' fullWidth>{aboutInfo.header}</Typography>
                     </Grid>
@@ -58,30 +64,44 @@ const About = () => {
                     <Typography variant='body1'>{aboutInfo.text}</Typography>
                 </Grid>
             </Grid> */}
-            <div className={classes.aboutBtnContainer}>
-                <div className={classes.aboutBtn}>
-                    <ColorButton fullWidth className={classes.aboutBtn} variant="contained" size='large'><b>Download Resume (pdf)</b></ColorButton>
-                </div>
-                <div className={classes.aboutBtn}>
-                    <Grid container direction='row' justifyContent='space-between' alignItems='space-between' spacing={4} className={classes.socialBtnContainer}>
-                        <Grid item xs={4} className={classes.aboutSocialBtn} >
-                            <ColorButton fullWidth variant="contained" size='small'><b>GH</b></ColorButton>
-                        </Grid>
-                        <Grid item xs={4} className={classes.aboutSocialBtn}>
-                            <ColorButton fullWidth variant="contained" size='small'><b>LI</b></ColorButton>
-                        </Grid>
-                        <Grid item xs={4} className={classes.aboutSocialBtn}>
-                            <ColorButton fullWidth variant="contained" size='small'><b>IG</b></ColorButton>
-                        </Grid>
-                    </Grid>
-                </div>
-                <div className={classes.aboutBtn}>
-                    <ColorButton className={classes.aboutBtn} fullWidth variant="contained" size='large'><b>Reading List</b></ColorButton>
-                </div>
-                <div className={classes.aboutBtn}>
-                    <ColorButton className={classes.aboutBtn} fullWidth variant="contained" size='large'><b>Random Post Button</b></ColorButton>
-                </div>
-            </div>
+            <Grid container spacing={2} direction='row' className={classes.aboutLinkContainer} sx={{mt: 4}}>
+                <Grid item xs={12} sm={12} md={12} lg={6}>
+                    <div className={classes.w100}>
+                        <Typography gutterBottom fullWidth variant='h6' align='center' sx={{pb: 2}}>For more info:</Typography>
+                    </div>
+                    <div className={classes.resumeBtn}>
+                        <ColorButton fullWidth className={classes.aboutBtn} variant="contained" size='large'><b>Download Resume (pdf)</b></ColorButton>
+                    </div>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={6} className={classes.socialContainer}>
+                    <div className={classes.w100}>
+                        <Typography gutterBottom fullWidth variant='h6' align='center' sx={{pb: 2}}>...or let's Connect!</Typography>
+                    </div>
+                    <div className={classes.socialBtnContainer}>
+                        <div className={classes.aboutSocialBtn}>
+                            <Link href="https://github.com/ZachTippit/" target="_blank" >
+                                <IconButton>
+                                    <GitHubIcon style={{fontSize: 50}}/>
+                                </IconButton>
+                            </Link>
+                        </div>
+                        <div className={classes.aboutSocialBtn}>
+                            <Link href="https://www.linkedin.com/in/zachtippit/" target="_blank" >
+                                <IconButton>
+                                    <LinkedInIcon style={{fontSize: 50}} color='primary'/>
+                                </IconButton>
+                            </Link>
+                        </div>
+                        <div className={classes.aboutSocialBtn}>
+                            <Link href="https://www.instagram.com/zach_tippit/" target="_blank" >
+                                <IconButton>
+                                    <InstagramIcon style={{fontSize: 50}} color='secondary'/>
+                                </IconButton>
+                            </Link>
+                        </div>
+                    </div>
+                </Grid>
+            </Grid>
             <Grid container direction='row' justifyContent='center' alignItems="center" spacing={3} sx={{mt: 4}}>
                 <Grid item xs={12} sm={12} md={6}>
                     <ExtraCauses />

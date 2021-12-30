@@ -4,6 +4,7 @@ import { Grid, Stack, Typography, Box, Tabs, Tab, Link } from '@mui/material'
 import { allTime } from '../../data/selects.js'
 import useStyles from '../styles'
 import clsx from 'clsx';
+import AllTimeCarousel from './AllTimeCarousel.jsx';
 
 let allTimeObj = allTime;
 
@@ -37,7 +38,6 @@ const AllTime = () => {
     
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-    console.log(allTime, allTimeObj)
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -58,20 +58,15 @@ const AllTime = () => {
             { Object.entries(allTimeObj).map(([category, list], index) => (
                 <TabPanel value={value} index={index}   >
                     <Typography variant='h2' align='center'>{category}</Typography>
-                    <Grid container>
+                    <AllTimeCarousel list={list}/>
+                    {/* <Grid container>
                         {list.map((item, index) => (
                         <Grid item xs={6} sm={4} className={clsx(classes.allTimePhotoContainer)}>
-                                <img src={item.pic} alt="Avatar" className={classes.selectPhoto} />
-                                <div className={classes.allTimePhotoOverlay}>
-                                    <div className={classes.allTimeText}>
-                                        <Typography variant='subtitle' align='left'><i>{item.category}</i></Typography>
-                                        <Typography variant='h5' align='left'>{item.title}</Typography>
-                                    </div>
-                                    
-                                </div>
+                                
                             </Grid>                        
                         ))}   
-                    </Grid>
+                    </Grid> */}
+                    
                 </TabPanel>
             ))}
 

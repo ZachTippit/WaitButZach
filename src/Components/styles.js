@@ -14,6 +14,10 @@ export default makeStyles((theme) => ({
         overflowX: 'hidden'
     },
 
+    w100: {
+        width: '100%'
+    },
+
     // Top Image
     topLogoContainer: {
         width: '100%',
@@ -100,7 +104,15 @@ export default makeStyles((theme) => ({
         }
     },
 
+    contentPicContainer: {
+        height: '160px',
+        overflowY: 'hidden',
+        display: 'flex',
+        justifyContent: 'center'
+    },
+
     contentPic: {
+        objectFit: 'cover',
         width: '100%',
     },
 
@@ -126,7 +138,7 @@ export default makeStyles((theme) => ({
     sidebarHeader: {
         paddingLeft: '1.5rem',
         width: '100%',
-        borderBottom: "#3A84C5 6px solid",
+        borderBottom: " #000d35 6px solid",
         marginBottom: '1.5rem'
     },
 
@@ -211,7 +223,11 @@ export default makeStyles((theme) => ({
         display: 'flex',
         direction: 'column',
         justifyContent: 'space-between',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        [theme.breakpoints.down('md')]: {
+            paddingTop: '2rem',
+        }
+
     },
 
     aboutBtnContainer: {
@@ -228,8 +244,33 @@ export default makeStyles((theme) => ({
         marginTop: '2rem'
     },
 
+    resumeBtn: {
+        paddingTop: '1rem',
+        paddingBottom: '2rem'
+    },
+
+    aboutLinkContainer: {
+        backgroundColor: 'lightGray',
+        padding: '3rem'
+    },
+
+    socialContainer: {
+        paddingTop: 0,
+        [theme.breakpoints.down('md')]: {
+            paddingTop: '4rem'
+        }
+    },
+
+    socialBtnContainer: {
+        display: 'flex',
+        width: '100%',
+    },
+
     aboutSocialBtn: {
+        width: '33%',
         textAlign: 'center',
+        paddingLeft: '2rem',
+        paddingRight: '2rem'
     },
 
     // Articles
@@ -382,6 +423,12 @@ export default makeStyles((theme) => ({
         }
     },
 
+    allTimeCarousel: {
+        maxWidth: '30%',
+        maxHeight: '30%',
+        margin: 'auto'
+    },
+
     selectPhotoOverlay: {
         position: 'absolute',
         height: '100%',
@@ -417,8 +464,8 @@ export default makeStyles((theme) => ({
     },
 
     allTimePhotoContainer: {
+        width: '50%',
         margin: 'auto',
-        marginBottom: '2rem',
         position: 'relative',
         '&:hover': {
                  opacity: "1"
@@ -434,13 +481,17 @@ export default makeStyles((theme) => ({
         bottom: 0,
         left: 0,
         right: 0,
-        opacity: 0.7,
+        opacity: 1,
         transition: '0.5s ease',
         '&:hover': {
-            opacity: '0',
+            opacity: '0.4',
         }
     },
 
+    bump: {
+        paddingLeft: '2rem'
+    },
+    
     allTimeText: {
         position: 'absolute',
         top: '50%',
