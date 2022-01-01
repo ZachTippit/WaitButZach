@@ -6,7 +6,7 @@ export const getArticle = async (articleID) => {
         method: 'GET'
     };
 
-    const Response = await fetch(`http://localhost:3001/article/${articleID}`).then(response => response.json())
+    const Response = await fetch(`https://zdt-portfolio-backend.herokuapp.com/article/${articleID}`).then(response => response.json())
     
     return Response.ok;
 }
@@ -17,7 +17,7 @@ export const getAllArticles = async () => {
         method: 'GET'
     };
 
-    const Response = await fetch(`http://localhost:3001/articles`).then(response => response.json())
+    const Response = await fetch(`https://zdt-portfolio-backend.herokuapp.com/articles`).then(response => response.json())
     
     return Response.items;
 }
