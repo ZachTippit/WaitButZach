@@ -5,17 +5,6 @@ import { handleAddSubscriber, subscriberCount } from '../../lib/email';
 
 import useStyles from '../styles'
 
-
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
 const SideSignUp = () => {
     const [subCount, setSubCount] = useState('a lot of');
     const { register, handleSubmit } = useForm();
@@ -34,7 +23,7 @@ const SideSignUp = () => {
     }, [])
 
     return (
-        <Card style={{backgroundColor: 'lightgreen'}} className={classes.signUpCard}>
+        <Card style={{backgroundColor: 'lightBlue'}} className={classes.signUpCard}>
             <CardContent>
                 {isRegistered ? 
                     <Typography variant='body1' align='center'><b>Thank you for subscribing! Check your email for details.</b></Typography> 
@@ -55,9 +44,6 @@ const SideSignUp = () => {
                         </Grid>
                     </form>
                 </Grid>
-            
-                
-                
             </CardActions>
         </Card>
     )

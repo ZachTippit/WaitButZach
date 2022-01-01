@@ -153,7 +153,7 @@ export default makeStyles((theme) => ({
 
     signUpCard: {
         width: '100%',
-        backgroundColor: 'lightgreen',
+        backgroundColor: 'lightGray',
         margin: 'auto'
     },
 

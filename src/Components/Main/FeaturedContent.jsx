@@ -17,7 +17,7 @@ const FeaturedContent = ({pic, title, description, date}) => {
                 <Typography variant='h5' align='center' fullWidth>{title}</Typography>
                 <Typography variant='body2' align='center' fullWidth className={classes.contentDate}><i>Published: {date}</i></Typography>
                 <div className={classes.featuredContentDescription}>
-                    <Typography variant='body1' align='left'>{description} <Link href='/'>read more.</Link></Typography>
+                    <Typography variant='body1' align='center'>{description} <Link href='/'>read more.</Link></Typography>
                 </div>
             </div>
         </div>
