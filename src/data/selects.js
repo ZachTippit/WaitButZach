@@ -1,9 +1,7 @@
-import React from 'react';
 import { ThreeBody, Fourteen91, Cmon, DeepRock, Dune, GreenKnight, Hades,
     Halo, HamOnRye, Inscryption, Inside, Invincible, LostDaughter, Mars, SilkRoads,
     Spidey, SquidGame, Succession, Valheim, WhiteLotus } from '../img/selects';
-import { Avatar, BadSamaritans, Bioshock, Burrito, Byron, Devs, Endgame,
-    EverythingGoesNumb, Foundation, Halt, Irredeemable, Ishmael, Kingdom,
+import { Avatar, BadSamaritans, Bioshock, Burrito, Byron, Endgame, Foundation, Halt, Irredeemable, Ishmael, Kingdom,
      LotR, MassEffect, Masu, SM64, T2, TDKR, WalkingDead } from '../img/alltime';
 
 export const selects = { 

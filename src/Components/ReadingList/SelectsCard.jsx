@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Grid, Stack, Typography, Slide, Box, Tabs, Tab, Link } from '@mui/material'
+import { Grid, Typography, Box, Tabs, Tab } from '@mui/material'
 import { selects } from '../../data/selects.js'
 import useStyles from '../styles'
 import clsx from 'clsx';

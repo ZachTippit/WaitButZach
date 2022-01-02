@@ -1,16 +1,14 @@
 import React from 'react'
-import { createTheme } from '@mui/material/styles';
 import ExtraCauses from './Main/ExtraCauses'
 import SideProjectCard from './Main/SideProjectCard';
-import { Grid, Typography, Button, Box, Link, IconButton } from '@mui/material';
+import { Grid, Typography, Button, Link, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
 import AboutImg  from '../img/about.png'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-import clsx from 'clsx';
+import Resume from '../data/zdt-resume.pdf'
 
 import useStyles from './styles'
 
@@ -39,7 +37,7 @@ const About = () => {
                 alignItems="center"
             >
                 <Grid item xs={12} sm={12} md={12} lg={6}>
-                    <img className={classes.aboutImg} src={AboutImg} alt='This is a picture of me!' />
+                    <img className={classes.aboutImg} src={AboutImg} alt='Hey! This is supposed to be me here.' />
                 </Grid>
                 <Grid container xs={12} sm={12} md={12} lg={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
                     <Grid item xs={12}>
@@ -50,27 +48,13 @@ const About = () => {
                     </Grid>
                 </Grid>
             </Grid>
-            {/* <Grid container
-                display={{xs: 'flex', sm: 'flex', md: 'none'}}
-                spacing = {2}
-                alignItems="center"
-                justify="center"
-            >
-                <Grid item xs={12} sm={12}>
-                    <img className={classes.aboutImg} src={AboutImg} alt='This is a picture of me!' />
-                </Grid>
-                <Grid item xs={12} sm={12} item alignItems='flex-start' justifyContent='space-between'>
-                    <Typography variant='h6'>{aboutInfo.header}</Typography>
-                    <Typography variant='body1'>{aboutInfo.text}</Typography>
-                </Grid>
-            </Grid> */}
             <Grid container spacing={2} direction='row' className={classes.aboutLinkContainer} sx={{mt: 4}}>
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <div className={classes.w100}>
                         <Typography gutterBottom fullWidth variant='h6' align='center' sx={{pb: 2}}>For more info:</Typography>
                     </div>
                     <div className={classes.resumeBtn}>
-                        <ColorButton fullWidth className={classes.aboutBtn} variant="contained" size='large'><b>Download Resume (pdf)</b></ColorButton>
+                        <ColorButton fullWidth className={classes.aboutBtn} variant="contained" size='large' href={Resume} target="_blank"><b>Download Resume (pdf)</b></ColorButton>
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} className={classes.socialContainer}>

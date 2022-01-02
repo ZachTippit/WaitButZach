@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {TopLogo, Navbar, Main, About, ArticleIndex, ReadingList, Projects, Contact, Footer, NoMatch} from './Components';
-import { BrowserRouter as Router, Routes, Route, Link, useRouteMatch, useParams } from "react-router-dom";
+import {TopLogo, Navbar, Main, About, ArticleContainer, ReadingList, Projects, Contact, Footer} from './Components';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useStyles from './Components/styles';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   <Routes>
     <Route path='/' element={<Main />} />
     <Route path='/about' element={<About />} />
-    <Route path='/articles' element={<ArticleIndex />} />
+    <Route path='/articles' element={<ArticleContainer />} />
     <Route path='/projects' element={<Projects />} />
     <Route path='/reading' element={<ReadingList />} />
     <Route path='/contact' element={<Contact />} />

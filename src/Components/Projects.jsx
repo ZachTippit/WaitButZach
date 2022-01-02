@@ -5,7 +5,6 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { Typography, Link, Grid } from '@mui/material';
-import ProjectCard from './Projects/ProjectCard'
 
 import * as data from '../data/projects.json'
 import useStyles from './styles'
@@ -99,7 +98,7 @@ const Projects = () => {
                           sx={{ flexDirection: { xs: 'column', sm: "column", md: "row"} }}
                         >
                             <Grid item xs={12} sm={12} md={4}>
-                                <img src={content.pic} className={classes.projectPic}/>
+                                <img src={content.pic} className={classes.projectPic} alt={`${content.pic}`}/>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>
                               <div className={classes.projectCardText}>
@@ -111,7 +110,7 @@ const Projects = () => {
                             <Grid item xs={12} sm={12} md={4}>
                               <div className={classes.projectCardText}>
                                 <Typography gutterBottom variant='h5'><b>Tech Used</b></Typography>
-                                {content.tech.map(tech => (<img src={badgeMaker(tech)} style={{padding: '0.25rem'}}/>))}
+                                {content.tech.map(tech => (<img src={badgeMaker(tech)} style={{padding: '0.25rem'}} alt={`${tech}`}/>))}
                               </div>
                             </Grid>
                         </Grid>

@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import ExtraCauses from './Main/ExtraCauses'
 import SideProjectCard from './Main/SideProjectCard'
 import { Typography, TextField, Grid, Button, Checkbox, FormGroup, FormControlLabel } from '@mui/material';
-import clsx from 'clsx';
 import { useForm } from 'react-hook-form';
 import { handleAddSubscriber } from '../lib/email.js';
 

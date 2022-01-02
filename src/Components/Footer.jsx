@@ -7,22 +7,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import useStyles from './styles';
 
-const socials = [
-  {
-    title: 'Github',
-    link: 'https://github.com/ZachTippit',
-  },
-  {
-    title: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/zachtippit/',
-  },
-  {
-    title: 'Instagram',
-    link: 'https://www.instagram.com/zach_tippit/',
-  },
-]
-
-
 const Footer = () => {
 
   const classes = useStyles();
@@ -70,18 +54,6 @@ const Footer = () => {
             </div>
           </Box>
           </Box>
-          {/* <Box alignSelf='center'>
-            <Link href="https://github.com/ZachTippit/" target="_blank" >
-              <GitHubIcon/>
-            </Link>
-            <Link href="https://www.linkedin.com/in/zachtippit/" target="_blank" >
-              <LinkedInIcon/>
-            </Link>
-            <Link href="https://www.instagram.com/zach_tippit/" target="_blank" >
-              <InstagramIcon/>
-            </Link>
-          </Box>
-       */}
 
       {/* Mobile Render */}
       <Stack sx={{ display: { sm: 'flex', md: 'none'}}} direction="column" justifyContent="center" alignItems="center">

@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Grid, Stack, Typography, Box, Tabs, Tab, Link } from '@mui/material'
+import { Typography, Box, Tabs, Tab, Link } from '@mui/material'
 import { allTime } from '../../data/selects.js'
-import useStyles from '../styles'
-import clsx from 'clsx';
 import AllTimeCarousel from './AllTimeCarousel.jsx';
 
 let allTimeObj = allTime;
@@ -36,7 +34,6 @@ TabPanel.propTypes = {
 
 const AllTime = () => {
     
-    const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {

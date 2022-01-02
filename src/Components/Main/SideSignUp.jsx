@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Card, CardActions, CardContent, Button, Typography, TextField, Grid } from '@mui/material';
+import { Card, CardActions, CardContent, Button, Typography, TextField, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { handleAddSubscriber, subscriberCount } from '../../lib/email';
 

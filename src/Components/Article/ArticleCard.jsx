@@ -1,19 +1,18 @@
 import React from 'react'
-import Dune from '../../img/selects/dune.png'
-import { Grid, Typography, Link, Button } from '@mui/material'
+import { Grid, Typography, Button } from '@mui/material'
 import useStyles from '../styles'
 
 import { getArticle } from '../../lib/article.js'
 
-const ArticleCard = ({pic, title, description, date, commentBtnCount, articleID}) => {
+const ArticleCard = ({id, pic, title, description, date, articleSelect}) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.articleCard} >
-            <Grid container direction="row" alignItems="center" component={Button} onClick={() => getArticle(articleID)} style={{textDecoration: 'none', color: '#333'}}>
+        <div className={classes.articleCard} onClick={() => articleSelect(id)}>
+            <Grid container direction="row" alignItems="center" component={Button} onClick={() => getArticle()} style={{textDecoration: 'none', color: '#333'}}>
                 <Grid item xs={4} zeroMinWidth>
                     <div className={classes.contentPicContainer}>
-                        <img src={pic} alt='Image' className={classes.contentPic}/>
+                        <img src={pic} alt={`${pic}`} className={classes.contentPic}/>
                     </div>
                 </Grid>
                 <Grid item xs>

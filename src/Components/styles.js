@@ -22,7 +22,6 @@ export default makeStyles((theme) => ({
     topLogoContainer: {
         width: '100%',
         margin: 'auto',     
-        paddingTop: '20px',
         paddingBottom: '0',
         display: 'flex',
         alignItems: 'flex-end'   
@@ -32,7 +31,11 @@ export default makeStyles((theme) => ({
         maxHeight: '150px',
         width: '300px',
         margin: 'auto',
-        paddingBottom: '0'   
+        paddingBottom: '0',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%',
+            maxHeight: '150px'
+        }   
     },
 
     // Navbar
@@ -306,7 +309,9 @@ export default makeStyles((theme) => ({
         backgroundColor: '#000d35',
         color: 'white',
         width: 'fit-content',
-        padding: '0.25rem'
+        padding: '0.25rem',
+        paddingLeft: '0.75rem',
+        paddingRight: '0.75rem'
     },
 
     articleCardDescription: {
@@ -322,6 +327,23 @@ export default makeStyles((theme) => ({
         margin: 'auto'
     },
 
+
+
+    //  Article Page
+    
+    articleContainer: {
+        paddingLeft: '2rem',
+        paddingRight: '2rem'
+    },
+
+    articleHeaderPic: {
+        display: 'block',
+        width: '100%',
+        margin: 'auto',
+        [theme.breakpoints.up('md')]: {
+            width: '70%'
+        }
+    },
 
 
     // Projects

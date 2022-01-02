@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
 import { Grid } from '@material-ui/core'
-import Content  from './Main/Content'
-import Sidebar from './Main/Sidebar'
-import Article from './Article/Article'
-import useStyles from './styles'
+import Content  from '../Main/Content'
+import Sidebar from '../Main/Sidebar'
+import Article from './Article'
+import useStyles from '../styles'
 
-import { getArticle } from '../lib/article.js'
+import { getArticle } from '../../lib/article.js'
 
-const Main = () => {
+
+const ArticleContainer = () => {
     const classes = useStyles();
-
     const [article, setArticle] = useState();
 
     const getArticleID = async (id) => {
@@ -20,7 +20,7 @@ const Main = () => {
     // useEffect(() => {
     //     console.log('Article', article);
     //   }, [article])
-    
+
     return (
         <>
             <Grid container className={classes.mainContainer} spacing={4}>
@@ -38,4 +38,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default ArticleContainer

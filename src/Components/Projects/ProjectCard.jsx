@@ -17,7 +17,7 @@ const ProjectCard = ({articlePic, title, description, techArray, link}) => {
                 </Grid>
                 <Grid item xs>
                     <Typography variant='h6'><b>{title}</b></Typography>
-                    {techArray.map(tech => (<img src={badgeMaker(tech)}/>))}
+                    {techArray.map(tech => (<img src={badgeMaker(tech)} alt={`${tech}`}/>))}
                     <div className={classes.articleCardDescription}>
                         <Typography variant='body2' style={{overflow: 'hidden', textOverflow: 'ellipsis'}}>{description}</Typography>
                     </div>

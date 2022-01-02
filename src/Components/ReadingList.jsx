@@ -6,13 +6,9 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import { Typography, Link, Grid } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import * as data from '../data/projects.json'
 import useStyles from './styles'
-
-let projects = data.default;
-
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
