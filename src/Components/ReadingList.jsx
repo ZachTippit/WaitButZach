@@ -71,14 +71,14 @@ const ReadingList = () => {
                         <SelectsCard />
                     </AccordionDetails>
                 </Accordion>
-                <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
+                {/* <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
                     <AccordionSummary aria-controls={'Recommendations-content'} id={'Recommendations-header'}>
                     <Typography><b>General Recommendations</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
                         
                     </AccordionDetails>
-                </Accordion>
+                </Accordion> */}
                 <Accordion expanded={expanded === 'All-Time'} onChange={handleChange('All-Time')}>
                     <AccordionSummary aria-controls={'All-Time-content'} id={'All-Time-header'}>
                     <Typography><b>All-Time Favorites</b></Typography>
