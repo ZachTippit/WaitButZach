@@ -380,7 +380,13 @@ export default makeStyles((theme) => ({
     },
 
     projectCardText: {
-        paddingLeft: '2rem'
+        paddingLeft: '2rem',
+        height: '100%'
+    },
+
+    prjLinkBtn: {
+        position: 'absolute',
+        bottom: '0'
     },
 
 

@@ -14,7 +14,7 @@ import useStyles from './styles'
 
 const aboutInfo = {
     header: 'Hi, it\'s me, Zach!',
-    text: 'There have been many jokes about my being the "Zach of All Trades", but the name is kind of sticking. Between an engineering degree, tech consulting with companies in almost a dozen countries and a mind for entrepreneurship, the deck is starting stack. Did I mention that I love video? Add marketing as another skill set. I have always defined myself by the work that I want to do and the last year has been a very exciting transition in that regard. After years of looking on enviously at my developer friends, I am finally making the transition to a fully technical role in the software development space.'
+    text: 'There have been many jokes about my being the "Zach of All Trades", but the name is starting to stick. Between an engineering degree, tech consulting with companies in almost a dozen countries and a mind for entrepreneurship, the deck is starting stack. Did I mention that I love video? Add marketing as another skill set. I have always defined myself by the work that I want to do and the last year has been a very exciting transition in that regard. After years of looking on enviously at my developer friends, I am finally making the transition to a fully technical role in the software development space.'
 }
 
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -44,7 +44,7 @@ const About = () => {
                         <Typography gutterBottom variant='h4' align='center' fullWidth>{aboutInfo.header}</Typography>
                     </Grid>
                     <Grid item xs={12} sx={{pt: 2}}>
-                        <Typography variant='body1'>{aboutInfo.text}</Typography>
+                        <Typography variant='body1' align='justify'>{aboutInfo.text}</Typography>
                     </Grid>
                 </Grid>
             </Grid>

@@ -10,7 +10,7 @@
         "title": "Star Wars Trivia",
         "link": "http://swapi-trivia.herokuapp.com/",
         "tech": ["React", "Node.js", "Tachyons", "Heroku"],
-        "description": "Single page app trivia game built on React and Node using the Star Wars API.",
+        "description": "IT DIED! Unfortunately, the underlying data API is no more. Just leaving this up for posterity :). Single page app trivia game built on React and Node using the Star Wars API.",
         "pic": "../assets/images/swapi.PNG"
     },
     {
@@ -31,6 +31,7 @@
         "title": "Old Portfolio",
         "link": "https://zachtippit.com",
         "tech": ["Node.js", "Handlebars"],
+        "description": "It was fun while it lasted, but this bare bones site no longer represents my skill level. Give it a look to see the progression.",
         "pic": "../assets/images/old.PNG"
     },
     {
@@ -51,6 +52,7 @@
         "title": "HANSCycle: Senior Design",
         "link": "https://web1.eng.famu.fsu.edu/me/senior_design/2016/team20/",
         "tech": ["HTML", "CSS", "SolidWorks"],
+        "description": "Created from a template in uni prior to any proper coding knowledge or experience. Our project ended up winning 'Most Innovative in Design' for FAMU-FSU's College of Engineering Design competition.",
         "pic": "../assets/images/hanscycle.PNG"
     }
 ]

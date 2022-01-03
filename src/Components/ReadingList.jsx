@@ -60,7 +60,7 @@ const ReadingList = () => {
             <div className={classes.prjHeader}>
                 <Typography variant='h4' className={classes.prjText}>Reading List</Typography>
             </div>
-                <Typography variant='body1' className={classes.prjSubhead}>These have all been created in 2021 with the exception of the HANSCycle project. Used technologies are listed in each. Reach out if you have any questions/want to know more!</Typography>
+                <Typography variant='body1' className={classes.prjSubhead}>I consume a genuinely concerning amount of content so I can at least put it to good use! Here are a few of the things that I have been obsessed with lately.</Typography>
 
             
                 <Accordion expanded={expanded === '2021_Selects'} onChange={handleChange('2021_Selects')}>

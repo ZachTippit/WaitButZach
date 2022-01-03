@@ -83,7 +83,7 @@ const Footer = () => {
                 </div>
             </div>
           </Box>
-          <Typography sx={{pt: 1, pb: 1}} variant='body2' style={{color:'white'}}>©2021 Zach Tippit</Typography>
+          <Typography sx={{pt: 1, pb: 1}} variant='body2' style={{color:'white'}}>©2022 Zach Tippit</Typography>
           {/* {socials.map(social => (
             <Link href={social.link}><Typography align='center' variant='body2'>{social.title}</Typography></Link>
           ))} */}
