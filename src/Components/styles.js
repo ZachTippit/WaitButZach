@@ -32,7 +32,7 @@ export default makeStyles((theme) => ({
         width: '300px',
         margin: 'auto',
         paddingBottom: '0',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             width: '100%',
             maxHeight: '150px'
         }   
