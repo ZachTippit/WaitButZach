@@ -56,9 +56,9 @@ const Sidebar = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{width: '100%'}}>
+                {/* <div style={{width: '100%'}}>
                     <ColorButton className={classes.sidebarCard} variant="contained" size='large'><b>Random Post Button</b></ColorButton>
-                </div>
+                </div> */}
                 <div style={{width: '100%'}}>
                     <SideProjectCard />
                 </div>
