@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Grid, Typography, Box, Tabs, Tab } from '@mui/material'
-import { selects } from '../../data/selects.js'
-import useStyles from '../styles'
+import { selects } from '../../../data/selects.js'
+import useStyles from '../../styles'
 import clsx from 'clsx';
 
 let selectsObj = selects;
@@ -12,6 +12,7 @@ function TabPanel(props) {
   
     return (
       <div
+        key={index}
         role="tabpanel"
         hidden={value !== index}
         id={`simple-tabpanel-${index}`}
@@ -20,7 +21,7 @@ function TabPanel(props) {
       >
         {value === index && (
           <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
+            <div>{children}</div>
           </Box>
         )}
       </div>
@@ -37,7 +38,6 @@ const SelectsCard = () => {
     
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-    console.log(selects, selectsObj)
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -50,16 +50,16 @@ const SelectsCard = () => {
             <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
                 <Tabs value={value} onChange={handleChange} centered>
                     { Object.entries(selectsObj).map(([category, list], index) => (
-                        <Tab label={category} id={`simple-tab-${index}`} ariaControls={`simple-tabpanel-${index}`} />
+                        <Tab label={category} id={`simple-tab-${index}`} aria-controls={`simple-tabpanel-${index}`} key={index}/>
                     ))}
                 </Tabs>
             </Box>
             { Object.entries(selectsObj).map(([category, list], index) => (
-                <TabPanel value={value} index={index}   >
+                <TabPanel value={value} index={index} key={index}>
                     <Typography variant='h2' align='center'>{category}</Typography>
                     <Grid container spacing={4}>
                         {list.map((item, index) => (
-                        <Grid item xs={12} sm={12} className={clsx(classes.allTimePhotoContainer)}>
+                        <Grid item xs={12} sm={12} className={clsx(classes.allTimePhotoContainer)} key={index}>
                             <div className={clsx(classes.selectPhotoContainer, classes.winner)}>
                                 <img src={item.pic} alt="Avatar" className={classes.selectPhoto} />
                                 <div className={classes.selectPhotoOverlay}>
@@ -76,9 +76,3 @@ const SelectsCard = () => {
 }
 
 export default SelectsCard
-
-// const selectsObj = { 
-//     "Movies": ['Dune', 'C\'mon C\'mon', 'Spider-Man: No Way Home', 'The Lost Daughter'] , 
-//     "Books": ['The Mars Trilogy', 'Ham on Rye', '1491/1493', 'The Three Body Problem'] , 
-//     "TV Shows": ['Mare of Eastown', 'Hawkeye', 'It\'s Always Sunny', 'Devs'] 
-// }

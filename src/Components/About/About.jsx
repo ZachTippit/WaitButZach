@@ -1,16 +1,16 @@
 import React from 'react'
-import ExtraCauses from './Main/ExtraCauses'
-import SideProjectCard from './Main/SideProjectCard';
+import ExtraCauses from '../Sidebar/ExtraCauses'
+import SideProjectCard from '../Sidebar/SideProjectCard';
 import { Grid, Typography, Button, Link, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { green } from '@mui/material/colors';
-import AboutImg  from '../img/about.png'
+import AboutImg  from '../../img/about.png'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Resume from '../data/zdt-resume.pdf'
+import Resume from '../../data/zdt-resume.pdf'
 
-import useStyles from './styles'
+import useStyles from '../styles'
 
 const aboutInfo = {
     header: 'Hi, it\'s me, Zach!',
@@ -39,19 +39,21 @@ const About = () => {
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <img className={classes.aboutImg} src={AboutImg} alt='Hey! This is supposed to be me here.' />
                 </Grid>
-                <Grid container xs={12} sm={12} md={12} lg={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
-                    <Grid item xs={12}>
-                        <Typography gutterBottom variant='h4' align='center' fullWidth>{aboutInfo.header}</Typography>
-                    </Grid>
-                    <Grid item xs={12} sx={{pt: 2}}>
-                        <Typography variant='body1'>{aboutInfo.text}</Typography>
+                <Grid item xs={12} sm={12} md={12} lg={6}>
+                    <Grid container className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
+                        <Grid item xs={12}>
+                            <Typography gutterBottom variant='h4' align='center'>{aboutInfo.header}</Typography>
+                        </Grid>
+                        <Grid item xs={12} sx={{pt: 2}}>
+                            <Typography variant='body1'>{aboutInfo.text}</Typography>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
             <Grid container spacing={2} direction='row' className={classes.aboutLinkContainer} sx={{mt: 4}}>
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <div className={classes.w100}>
-                        <Typography gutterBottom fullWidth variant='h6' align='center' sx={{pb: 2}}>For more info:</Typography>
+                        <Typography gutterBottom variant='h6' align='center' sx={{pb: 2}}>For more info:</Typography>
                     </div>
                     <div className={classes.resumeBtn}>
                         <ColorButton fullWidth className={classes.aboutBtn} variant="contained" size='large' href={Resume} target="_blank"><b>Download Resume (pdf)</b></ColorButton>
@@ -59,7 +61,7 @@ const About = () => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} lg={6} className={classes.socialContainer}>
                     <div className={classes.w100}>
-                        <Typography gutterBottom fullWidth variant='h6' align='center' sx={{pb: 2}}>...or let's Connect!</Typography>
+                        <Typography gutterBottom variant='h6' align='center' sx={{pb: 2}}>...or let's Connect!</Typography>
                     </div>
                     <div className={classes.socialBtnContainer}>
                         <div className={classes.aboutSocialBtn}>

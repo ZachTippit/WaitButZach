@@ -9,15 +9,12 @@ const FeaturedContent = ({id, pic, title, description, date, articleSelect}) => 
 
     return (
         <div>
-            <div className={classes.articlesHeader}>
-                <Typography variant='h4' className={classes.articleText}>Featured Content</Typography>
-            </div>
             <div className={classes.featuredContent}>
                 <img src={pic} className={classes.featuredContentPic} alt={`${pic}`} onClick={() => articleSelect(id)}/>
-                <Typography variant='h5' align='center' fullWidth onClick={() => articleSelect(id)}>{title}</Typography>
-                <Typography variant='body2' align='center' fullWidth className={classes.contentDate}><i>Published: {date}</i></Typography>
+                <Typography variant='h5' align='center' onClick={() => articleSelect(id)}>{title}</Typography>
+                <Typography variant='body2' align='center' className={classes.contentDate}><i>Published: {date}</i></Typography>
                 <div className={classes.featuredContentDescription}>
-                    <Typography variant='body1' align='center'>{description} <Link onClick={() => articleSelect(id)}>read more.</Link></Typography>
+                    <Typography variant='body1' align='center'>{description}</Typography>
                 </div>
             </div>
         </div>
@@ -25,3 +22,5 @@ const FeaturedContent = ({id, pic, title, description, date, articleSelect}) => 
 }
 
 export default FeaturedContent
+
+// <Link onClick={() => articleSelect(id)}>read more.</Link>

@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { Typography } from '@mui/material';
 
-import useStyles from '../styles'
+import useStyles from '../../styles'
 
 const AllTimeCarousel = ({list}) => {
 
@@ -12,11 +12,11 @@ const AllTimeCarousel = ({list}) => {
     return(
             <Carousel>
                 {list.map((item, index) => (
-                    <div className={classes.allTimeCarousel}>
+                    <div className={classes.allTimeCarousel} key={index}>
                         <img src={item.pic} alt="Avatar" className={classes.selectPhoto} />
                         <div className={classes.allTimePhotoOverlay}>
                             <div className={classes.allTimeText}>
-                                <Typography variant='subtitle' align='left'><i>{item.category}</i></Typography>
+                                <Typography variant='subtitle' align='left' sx={{fontStyle:'italic'}}>{item.category}</Typography>
                                 <div className={classes.bump}>
                                     <Typography variant='h5' align='left' className={classes.slideIn}>{item.title}</Typography>
                                 </div>

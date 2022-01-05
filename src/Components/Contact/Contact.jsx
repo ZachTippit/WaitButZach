@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import ExtraCauses from './Main/ExtraCauses'
-import SideProjectCard from './Main/SideProjectCard'
+import ExtraCauses from '../Sidebar/ExtraCauses'
+import SideProjectCard from '../Sidebar/SideProjectCard'
 import { Typography, TextField, Grid, Button, Checkbox, FormGroup, FormControlLabel } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { handleAddSubscriber } from '../lib/email.js';
+import { handleAddSubscriber } from '../../lib/email.js';
 
-import useStyles from './styles';
+import useStyles from '../styles';
 
 const Contact = () => {
     const classes = useStyles();
@@ -25,8 +25,8 @@ const Contact = () => {
                 <form onSubmit={handleSubmit(onSubmit, onError)}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
-                            <Typography fullWidth gutterBottom align='center' variant='h4'>What's on your mind?</Typography>
-                            <Typography fullWidth gutterBottom align='center' variant='body2'>If you made it here, you probably wanted to reach out. Shoot me a message and let's chat!</Typography>
+                            <Typography gutterBottom align='center' variant='h4'>What's on your mind?</Typography>
+                            <Typography gutterBottom align='center' variant='body2'>If you made it here, you probably wanted to reach out. Shoot me a message and let's chat!</Typography>
                             {isRegistered ? <Typography variant='body1' align='center'><b>Thanks for reaching out. I'll be in touch :)</b></Typography> : null}
                         </Grid>
                         <Grid item xs={12} sm={6} md={4}>

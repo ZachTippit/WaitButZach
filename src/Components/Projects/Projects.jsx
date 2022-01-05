@@ -6,8 +6,8 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { Typography, Link, Grid } from '@mui/material';
 
-import * as data from '../data/projects.json'
-import useStyles from './styles'
+import * as data from '../../data/projects.json'
+import useStyles from '../styles'
 
 let projects = data.default;
 
@@ -89,7 +89,7 @@ const Projects = () => {
                 <Typography variant='body1' className={classes.prjSubhead}>These have all been created in 2021 with the exception of the HANSCycle project. Used technologies are listed in each. Reach out if you have any questions/want to know more!</Typography>
 
             { projects.map((content, index) => ( 
-                <Accordion expanded={expanded === `panel${index+1}`} onChange={handleChange(`panel${index+1}`)}>
+                <Accordion expanded={expanded === `panel${index+1}`} onChange={handleChange(`panel${index+1}`)} key={content.title}>
                     <AccordionSummary aria-controls={`panel${index+1}-content`} id={`panel${index+1}-header`}>
                     <Typography><b>{content.title}</b></Typography>
                     </AccordionSummary>
@@ -110,7 +110,7 @@ const Projects = () => {
                             <Grid item xs={12} sm={12} md={4}>
                               <div className={classes.projectCardText}>
                                 <Typography gutterBottom variant='h5'><b>Tech Used</b></Typography>
-                                {content.tech.map(tech => (<img src={badgeMaker(tech)} style={{padding: '0.25rem'}} alt={`${tech}`}/>))}
+                                {content.tech.map(tech => (<img src={badgeMaker(tech)} style={{padding: '0.25rem'}} alt={`${tech}`} key={tech}/>))}
                               </div>
                             </Grid>
                         </Grid>

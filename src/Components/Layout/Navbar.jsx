@@ -1,17 +1,18 @@
 import * as React from 'react';
 // import { styled, alpha } from '@mui/material/styles';
-import { AppBar, Box, Container, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Link } from '@mui/material'
+import { AppBar, Box, Container, Toolbar, Typography, IconButton, Menu, MenuItem, Button } from '@mui/material'
+import { Link } from 'react-router-dom';
 import  MenuIcon from '@mui/icons-material/Menu';
 
-import useStyles from './styles';
+import useStyles from '../styles';
 
 const pages = [
   { title: 'Home', link: '/' },
-  { title: 'About', link: '/about' },
-  { title: 'Articles', link: '/articles' },
-  { title: 'Projects', link: '/projects' },
-  { title: 'Reading List', link: '/reading' },
-  { title: 'Contact', link: '/contact' }
+  { title: 'About', link: 'about' },
+  { title: 'Articles', link: 'articles' },
+  { title: 'Projects', link: 'projects' },
+  { title: 'Reading List', link: 'reading' },
+  { title: 'Contact', link: 'contact' }
 ];
 
 export default function Navbar() {
@@ -32,7 +33,7 @@ export default function Navbar() {
     <AppBar position="static" style={{background: '#333'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, pr:0 }}>
             <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
             </IconButton>
@@ -41,27 +42,31 @@ export default function Navbar() {
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               transformOrigin={{ vertical: 'top', horizontal: 'left' }}
               open={Boolean(anchorElNav)} onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: 'block', md: 'none' }, pr: 0 }}
+              disableScrollLock={ true }
             >
               {pages.map((page) => (
-                <MenuItem component={Link} href={page.link} key={page.title} onClick={handleCloseNavMenu} className={classes.w100}>
-                  <Typography align="center">{page.title}</Typography>
-                </MenuItem>
+                <Link key={`${page.link}Mobile`} to={page.link} style={{ textDecoration: 'none' }}>
+                  <MenuItem key={`${page.title}Mobilebtn`} onClick={handleCloseNavMenu} className={classes.w100}>
+                    {page.title}
+                  {/* <Typography align="center">{page.title}</Typography> */}
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'space-around' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'space-around', alignContent: 'stretch', alignItems: 'stretch'}}>
             {pages.map((page) => (
-              <div className={classes.navBtn}>
-                <Button
-                component={Link}
-                href={page.link}
-                key={page.title}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page.title}
-                </Button>
+              <div className={classes.navBtn} key={`${page.link}Desktop`}>
+                <Link key={`${page.link}Desktop`} to={page.link} style={{ textDecoration: 'none'}}>
+                  <Button
+                    key={`${page.title}Desktopbtn`}
+                    onClick={handleCloseNavMenu}
+                    sx={{ color: 'white', display: 'block' , margin: 'auto'}}
+                  >
+                    {page.title}
+                  </Button>
+                </Link>
               </div>
             ))}
           </Box>

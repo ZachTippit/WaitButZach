@@ -1,6 +1,6 @@
 import React from 'react'
-import useStyles from './styles';
-import logo from '../img/logo.png'
+import useStyles from '../styles';
+import logo from '../../img/logo.png'
 
 const TopLogo = () => {
     const classes = useStyles();
