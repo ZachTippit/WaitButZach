@@ -71,7 +71,7 @@ const ReadingList = () => {
                         <SelectsCard />
                     </AccordionDetails>
                 </Accordion>
-                <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
+                {/* <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
                     <AccordionSummary id={'Recommendations-header'}>
                     <Typography><b>General Recommendations</b></Typography>
                     </AccordionSummary>

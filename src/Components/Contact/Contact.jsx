@@ -3,7 +3,7 @@ import ExtraCauses from '../Sidebar/ExtraCauses'
 import SideProjectCard from '../Sidebar/SideProjectCard'
 import { Typography, TextField, Grid, Button, Checkbox, FormGroup, FormControlLabel } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { handleAddSubscriber } from '../../lib/email.js';
+import { addSubscriber } from '../../lib/email.js';
 
 import useStyles from '../styles';
 
@@ -14,7 +14,7 @@ const Contact = () => {
     const [ isRegistered, setIsRegistered ] = useState(false);
 
     const onSubmit = async (data, e) => {
-        setIsRegistered(await handleAddSubscriber(data));
+        setIsRegistered(await addSubscriber(data));
     }
 
     const onError = (errors, e) => console.log(errors, e);
