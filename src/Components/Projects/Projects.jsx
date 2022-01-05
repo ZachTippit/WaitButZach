@@ -4,7 +4,7 @@ import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import { Typography, Link, Grid } from '@mui/material';
+import { Typography, Link, Grid, Button } from '@mui/material';
 
 import * as data from '../../data/projects.json'
 import useStyles from '../styles'
@@ -86,7 +86,7 @@ const Projects = () => {
             <div className={classes.prjHeader}>
                 <Typography variant='h4' className={classes.prjText}>Projects</Typography>
             </div>
-                <Typography variant='body1' className={classes.prjSubhead}>These have all been created in 2021 with the exception of the HANSCycle project. Used technologies are listed in each. Reach out if you have any questions/want to know more!</Typography>
+                <Typography variant='body1' className={classes.prjSubhead}>Ah, so you have found your way to my projects page! All of these except for HANSCycle were created between 12/20-1/22. Please <Link href='/contact'>reach out if you have any questions or comments.</Link></Typography>
 
             { projects.map((content, index) => ( 
                 <Accordion expanded={expanded === `panel${index+1}`} onChange={handleChange(`panel${index+1}`)} key={content.title}>
@@ -100,11 +100,11 @@ const Projects = () => {
                             <Grid item xs={12} sm={12} md={4}>
                                 <img src={content.pic} className={classes.projectPic} alt={`${content.pic}`}/>
                             </Grid>
-                            <Grid item xs={12} sm={12} md={4}>
+                            <Grid item xs={12} sm={12} md={4} sx={{height: '100%'}}>
                               <div className={classes.projectCardText}>
                                 <Typography gutterBottom variant='h5'><b>{content.title}</b></Typography>
                                 <Typography variant='body1'>{content.description}</Typography>
-                                <Link href={content.link}>Check out the project here!</Link>
+                                <Button variant='contained' sx={{mt: 4, pt: 1, pb: 1}} href={content.link} className={classes.prjLinkBtn}>Check out the project!</Button>
                               </div>
                             </Grid>
                             <Grid item xs={12} sm={12} md={4}>

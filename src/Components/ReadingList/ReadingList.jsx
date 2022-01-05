@@ -60,7 +60,7 @@ const ReadingList = () => {
             <div className={classes.prjHeader}>
                 <Typography variant='h4' className={classes.prjText}>Reading List</Typography>
             </div>
-                <Typography variant='body1' className={classes.prjSubhead}>These have all been created in 2021 with the exception of the HANSCycle project. Used technologies are listed in each. Reach out if you have any questions/want to know more!</Typography>
+                <Typography variant='body1' className={classes.prjSubhead}>I consume a genuinely concerning amount of content so I can at least put it to good use! Here are a few of the things that I have been obsessed with lately.</Typography>
 
             
                 <Accordion expanded={expanded === '2021_Selects'} onChange={handleChange('2021_Selects')}>
@@ -71,14 +71,19 @@ const ReadingList = () => {
                         <SelectsCard />
                     </AccordionDetails>
                 </Accordion>
+<<<<<<< HEAD:src/Components/ReadingList/ReadingList.jsx
                 <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
                     <AccordionSummary id={'Recommendations-header'}>
+=======
+                {/* <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
+                    <AccordionSummary aria-controls={'Recommendations-content'} id={'Recommendations-header'}>
+>>>>>>> main:src/Components/ReadingList.jsx
                     <Typography><b>General Recommendations</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
                         
                     </AccordionDetails>
-                </Accordion>
+                </Accordion> */}
                 <Accordion expanded={expanded === 'All-Time'} onChange={handleChange('All-Time')}>
                     <AccordionSummary id={'All-Time-header'}>
                     <Typography><b>All-Time Favorites</b></Typography>
