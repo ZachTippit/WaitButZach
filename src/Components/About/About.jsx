@@ -39,7 +39,6 @@ const About = () => {
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <img className={classes.aboutImg} src={AboutImg} alt='Hey! This is supposed to be me here.' />
                 </Grid>
-<<<<<<< HEAD:src/Components/About/About.jsx
                 <Grid item xs={12} sm={12} md={12} lg={6}>
                     <Grid container className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
                         <Grid item xs={12}>
@@ -48,14 +47,6 @@ const About = () => {
                         <Grid item xs={12} sx={{pt: 2}}>
                             <Typography variant='body1'>{aboutInfo.text}</Typography>
                         </Grid>
-=======
-                <Grid container xs={12} sm={12} md={12} lg={6} className={classes.aboutText} alignItems='flex-start' justifyContent='space-between'>
-                    <Grid item xs={12}>
-                        <Typography gutterBottom variant='h4' align='center' fullWidth>{aboutInfo.header}</Typography>
-                    </Grid>
-                    <Grid item xs={12} sx={{pt: 2}}>
-                        <Typography variant='body1' align='justify'>{aboutInfo.text}</Typography>
->>>>>>> main:src/Components/About.jsx
                     </Grid>
                 </Grid>
             </Grid>
