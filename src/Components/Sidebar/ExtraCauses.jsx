@@ -12,10 +12,10 @@ const ExtraCauses = () => {
             </div>
             <p>Please do not fund my caffeine addiction any further. Contribute to something helpful instead!</p>
             <ul>
-                <li><a href='https://www.globalgiving.org/projects/afghanistan-emergency-fund/projects/#menu'>Afghanistan Emergency Fund</a></li>
-                <li><a href='https://www.plannedparenthood.org/get-involved/other-ways-give'>Planned Parenthood</a></li>
-                <li><a href='https://www.charitywater.org/donate'>Project Water</a></li>
-                <li><a href='https://donate.wikimedia.org/'>Wikipedia (they need it!)</a></li>
+                <li><a href='https://www.globalgiving.org/projects/afghanistan-emergency-fund/projects/#menu' target="_blank" rel="noreferrer">Afghanistan Emergency Fund</a></li>
+                <li><a href='https://www.plannedparenthood.org/get-involved/other-ways-give' target="_blank" rel="noreferrer">Planned Parenthood</a></li>
+                <li><a href='https://www.charitywater.org/donate' target="_blank" rel="noreferrer">Project Water</a></li>
+                <li><a href='https://donate.wikimedia.org/' target="_blank" rel="noreferrer">Wikipedia (they need it!)</a></li>
             </ul>
             
         </div>

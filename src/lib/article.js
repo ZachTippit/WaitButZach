@@ -1,4 +1,3 @@
-
 // Need to change this to opening up article link.
 export const getArticle = async (articleID) => {
 
@@ -15,5 +14,4 @@ export const getAllArticles = async () => {
 }
 
 // Load all articles
-
 // Leave a comment

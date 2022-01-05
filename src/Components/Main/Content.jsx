@@ -3,10 +3,11 @@ import FeaturedContent from './FeaturedContent'
 import ArticleCard from '../Article/ArticleCard'
 import useStyles from '../styles'
 import { Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
 import { getAllArticles } from '../../lib/article.js'
 
 
-const Content = ({articleSelect}) => {
+const Content = ({articles, articleSelect, fetchArticle}) => {
 
     const classes = useStyles();
     const [content, setContent] = useState([]);
@@ -16,35 +17,45 @@ const Content = ({articleSelect}) => {
         setContent(contentArray2);
       }, [])
 
-    const handleArticleSelect = (id) => {
-        articleSelect(id);
+    const handleArticleSelect = async(id) => {
+        await fetchArticle(id);
     }
 
     return (
         <div>
             { content.map((content,index) => ( 
                 index===0 ?
-                    <>
-                        <FeaturedContent 
+                    <div key={content.sys.id}>
+                        <div className={classes.articlesHeader}>
+                            <Typography variant='h4' className={classes.articleText}>Featured Content</Typography>
+                        </div>
+                        <Link to={`article/${content.fields.URLtitle}`} key={content.sys.id} style={{textDecoration: 'none', color: 'inherit'}}>
+                            <FeaturedContent
+                            key={content.sys.id}
                             id={content.sys.id}
                             pic={content.fields.headerImage.fields.file.url}
                             title={content.fields.title} description={content.fields.subtitle}
                             date={content.fields.datePublished}
-                            articleSelect={handleArticleSelect} 
-                        />
+                            articleSelect={(e) => handleArticleSelect(content.fields.URLtitle)}
+                            />
+                        </Link>
                         <div className={classes.articlesHeader}>
                             <Typography variant='h4' className={classes.articleText}>Articles</Typography>
                         </div>
-                    </>
+                    </div>
                     
                 :
-                    <ArticleCard 
-                        id={content.sys.id}
-                        pic={content.fields.headerImage.fields.file.url}
-                        title={content.fields.title}
-                        description={content.fields.subtitle}
-                        date={content.fields.datePublished}
-                        articleSelect={handleArticleSelect}/>    
+                    <Link to={`article/${content.fields.URLtitle}`} key={content.sys.id} style={{textDecoration: 'none'}}>
+                        <ArticleCard 
+                            key={content.sys.id}
+                            id={content.sys.id}
+                            pic={content.fields.headerImage.fields.file.url}
+                            title={content.fields.title}
+                            description={content.fields.subtitle}
+                            date={content.fields.datePublished}
+                            articleSelect={(e) => handleArticleSelect(content.fields.URLtitle)} 
+                        />    
+                    </Link>
             ))}
         </div>
     )

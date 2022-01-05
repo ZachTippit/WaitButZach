@@ -31,7 +31,7 @@ const Sidebar = () => {
                     <SideSignUp />
                 </div>
                 <div className={classes.w100}>
-                    <Typography gutterBottom fullWidth variant='h6' align='center' sx={{pb: 2}}>...or let's Connect!</Typography>
+                    <Typography gutterBottom variant='h6' align='center' sx={{pb: 2}}>...or let's Connect!</Typography>
                     <div className={classes.socialBtnContainer}>
                         <div className={classes.aboutSocialBtn}>
                             <Link href="https://github.com/ZachTippit/" target="_blank" >

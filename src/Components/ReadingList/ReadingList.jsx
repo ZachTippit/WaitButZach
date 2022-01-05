@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import SelectsCard from './ReadingList/SelectsCard'
-import AllTime from './ReadingList/AllTime'
+import SelectsCard from './Subcomponents/SelectsCard'
+import AllTime from './Subcomponents/AllTime'
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { Typography } from '@mui/material';
 
-import useStyles from './styles'
+import useStyles from '../styles'
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -64,15 +64,20 @@ const ReadingList = () => {
 
             
                 <Accordion expanded={expanded === '2021_Selects'} onChange={handleChange('2021_Selects')}>
-                    <AccordionSummary aria-controls={'2021_Selects-content'} id={'2021_Selects-header'}>
+                    <AccordionSummary id={'2021_Selects-header'}>
                     <Typography><b>2021 Selects</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
                         <SelectsCard />
                     </AccordionDetails>
                 </Accordion>
+<<<<<<< HEAD:src/Components/ReadingList/ReadingList.jsx
+                <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
+                    <AccordionSummary id={'Recommendations-header'}>
+=======
                 {/* <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
                     <AccordionSummary aria-controls={'Recommendations-content'} id={'Recommendations-header'}>
+>>>>>>> main:src/Components/ReadingList.jsx
                     <Typography><b>General Recommendations</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
@@ -80,7 +85,7 @@ const ReadingList = () => {
                     </AccordionDetails>
                 </Accordion> */}
                 <Accordion expanded={expanded === 'All-Time'} onChange={handleChange('All-Time')}>
-                    <AccordionSummary aria-controls={'All-Time-content'} id={'All-Time-header'}>
+                    <AccordionSummary id={'All-Time-header'}>
                     <Typography><b>All-Time Favorites</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>

@@ -49,8 +49,13 @@ export default makeStyles((theme) => ({
     },
 
     navBtn: {
+        display: 'flex',
         textAlign: 'center',
         width: '100%',
+        height: '4rem',
+        margin: 'auto',
+        alignItems: 'center',
+        justifyContent: 'center',
         transition: "background 0.5s, color 0.5s",
         '&:hover': {
             backgroundColor: "#555",
@@ -74,7 +79,8 @@ export default makeStyles((theme) => ({
     featuredContent: {
         display: 'block',
         margin: 'auto',
-        marginBottom: '2rem'
+        marginBottom: '2rem',
+        width: '80%'
     },
 
     featuredContentPic: {
