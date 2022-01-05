@@ -71,13 +71,8 @@ const ReadingList = () => {
                         <SelectsCard />
                     </AccordionDetails>
                 </Accordion>
-<<<<<<< HEAD:src/Components/ReadingList/ReadingList.jsx
                 <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
                     <AccordionSummary id={'Recommendations-header'}>
-=======
-                {/* <Accordion expanded={expanded === 'Recommendations'} onChange={handleChange('Recommendations')}>
-                    <AccordionSummary aria-controls={'Recommendations-content'} id={'Recommendations-header'}>
->>>>>>> main:src/Components/ReadingList.jsx
                     <Typography><b>General Recommendations</b></Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{p: 0, pt: 3, pb:3}}>
