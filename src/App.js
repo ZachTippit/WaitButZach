@@ -26,9 +26,9 @@ function App() {
     fetchArticles();
   }, [, articles])
 
-  useEffect(() => {
-    console.log(article);
-  }, [,article])
+  // useEffect(() => {
+  //   console.log(article);
+  // }, [,article])
 
 
   const findArticle = (slug) => {

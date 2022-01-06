@@ -46,7 +46,7 @@ export default function Navbar() {
               disableScrollLock={ true }
             >
               {pages.map((page) => (
-                <Link key={`${page.link}Mobile`} to={page.link} style={{ textDecoration: 'none' }}>
+                <Link key={`${page.link}Mobile`} to={page.link} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <MenuItem key={`${page.title}Mobilebtn`} onClick={handleCloseNavMenu} className={classes.w100}>
                     {page.title}
                   {/* <Typography align="center">{page.title}</Typography> */}
@@ -58,7 +58,7 @@ export default function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'space-around', alignContent: 'stretch', alignItems: 'stretch'}}>
             {pages.map((page) => (
               <div className={classes.navBtn} key={`${page.link}Desktop`}>
-                <Link key={`${page.link}Desktop`} to={page.link} style={{ textDecoration: 'none'}}>
+                <Link key={`${page.link}Desktop`} to={page.link} style={{ textDecoration: 'none', color: 'inherit'}}>
                   <Button
                     key={`${page.title}Desktopbtn`}
                     onClick={handleCloseNavMenu}

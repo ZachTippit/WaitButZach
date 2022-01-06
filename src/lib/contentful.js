@@ -1,6 +1,5 @@
 import { createClient } from 'contentful'
 import { paramCase } from 'change-case'
-import { modalUnstyledClasses } from '@mui/material';
 
 const client = createClient({
     space: process.env.REACT_APP_SPACE_ID,
