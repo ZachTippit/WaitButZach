@@ -7,14 +7,14 @@ const Layout = () => {
     const classes = useStyles();
 
     return (
-        <>
+        <div style={{width: '100%'}}>
             <TopLogo />
             <Navbar />
             <div className={classes.mainView}>
                 <Outlet />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 
