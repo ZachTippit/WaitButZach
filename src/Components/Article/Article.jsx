@@ -57,7 +57,6 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
     setReplyBool(true);
     setReplyName(`Replying to ${name}`)
     setReplyID(id)
-    console.log(replyBool, replyName, replyID);
   }
 
   // Cancel Reply

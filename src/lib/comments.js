@@ -47,7 +47,7 @@ export async function getCommentsFn(id, context, callback){
 export async function postCommentsFn(data, context, callback){
     const { name, handle, message, ID, reply, replyID } = data;
     let postComments = [];
-
+    console.log('test')
     // Gets comments
     await client.getSpace(process.env.REACT_APP_SPACE_ID)
     .then(space => space.getEnvironment('master'))
@@ -71,7 +71,6 @@ export async function postCommentsFn(data, context, callback){
             }
         })
     } else {
-        console.log(+new Date()/1000);
         postComments.push({
             name: name,
             handle: handle,
