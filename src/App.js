@@ -1,14 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import { TopLogo, Navbar, Footer } from './Components';
-import { Outlet } from 'react-router-dom'
 import useStyles from './Components/styles';
 import {  Main, About, Article, Articles, Layout, ArticlesIndex, ReadingList, Projects, Contact } from './Components';
-import Article2 from './Components/Article/Article'
 import { BrowserRouter, Routes, Route, useParams, useNavigate } from 'react-router-dom'
 
 import { getPost, getPosts } from './lib/contentful'
-
-const articles2 = getPosts();
 
 function App() {
   const classes = useStyles();
@@ -24,7 +19,8 @@ function App() {
 
   useEffect(() => {
     fetchArticles();
-  }, [, articles])
+    console.log('doot');
+  }, [])
 
   // useEffect(() => {
   //   console.log(article);
