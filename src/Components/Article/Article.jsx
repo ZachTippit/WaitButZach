@@ -40,6 +40,7 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
     }, [,article, location.pathname, params.slug])
     
     useEffect(() => {
+      window.scrollTo(0, 0)
       async function fetchComments(article){
         const id = article.sys.id
         // console.log(id);
