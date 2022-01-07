@@ -8,9 +8,9 @@ const Comments = ({comments, reply, sortComments, order}) => {
     const orderComments = order === true ? "Oldest First" : "Most Recent"
     const [commentsData, setCommentsData] = useState(comments);
 
-    useEffect(() => {
-        console.log(comments);
-    }, [comments])
+    // useEffect(() => {
+    //     console.log(comments);
+    // }, [comments])
 
 
     return (
@@ -31,17 +31,21 @@ const Comments = ({comments, reply, sortComments, order}) => {
 
                         </Box>
                         <Typography variant='body1'>{comment.message}</Typography>
-                        <Button size='small' onClick={() => reply(comment.id, comment.name)}>Reply</Button>
+                        <Box sx={{mt: 2}}>
+                            <Button size='small' variant='contained' onClick={() => reply(comment.id, comment.name)}>Reply</Button>
+                        </Box>
                     </Box>
-                    <Box sx={{ml:4, pb: 8}}>
-                        {comment.replies.map((comment, index) => (
-                            <Box sx={{pl: 4}} key={index} style={{borderLeft: '1px solid lightgray'}}>
-                                <Typography variant='body1'><b>{comment.name}</b></Typography>
-                                <Typography gutterBottom variant='subtitle' style={{fontSize: '.75rem'}}><i>{formatDate(comment.timestamp).toString()}</i></Typography>
-                                <Typography variant='body1'>{comment.message}</Typography>
-                            </Box>
-                        ))}
-                    </Box>
+                    {comments.replies !== undefined && 
+                        <Box sx={{ml:4, pb: 8}}>
+                            {comment.replies.map((comment, index) => (
+                                <Box sx={{pl: 4}} key={index} style={{borderLeft: '1px solid lightgray'}}>
+                                    <Typography variant='body1'><b>{comment.name}</b></Typography>
+                                    <Typography gutterBottom variant='subtitle' style={{fontSize: '.75rem'}}><i>{formatDate(comment.timestamp).toString()}</i></Typography>
+                                    <Typography variant='body1'>{comment.message}</Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                    }
                     <Divider variant="middle" sx={{mb: 2, mt: 4, width: '50%', margin: 'auto'}}/>
                 </div>
             ))}

@@ -6,7 +6,7 @@ import useStyles from '../styles';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { getArticle } from '../../lib/article'
-import { postCommentsFn } from '../../lib/comments'
+import { getCommentsFn, postCommentsFn } from '../../lib/comments'
 import axios from 'axios'
 
 
@@ -41,18 +41,15 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
     
     useEffect(() => {
       async function fetchComments(article){
-        if(!article.fields.comments){
-            setComments([{
-                id: 'tooties'
-            }]);
-        }
-        else{
-            setComments(article.fields.comments.comments)
-        }    
-    }
+        const id = article.sys.id
+        // console.log(id);
+        const commentsData = await getCommentsFn(id);
+        setComments(commentsData)
+            // setComments(article.fields.comments.comments)
+      }    
       fetchComments(article);
       // console.log(comments);
-    }, [article])
+    }, [,article])
 
   // Reply  
   const reply = (id, name) => {

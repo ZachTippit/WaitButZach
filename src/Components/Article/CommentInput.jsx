@@ -75,11 +75,11 @@ const CommentInput = ({addComment, cancelReply, replyBool, replyName, msg, loadi
                     </Grid>
                     <Grid item xs={12}>
                         <Box sx={{pb:1}}>
-                            <Button fullWidth type="submit" variant="contained" sx={{pb: 2}}>{loading? 'Adding...' : 'Add Comment'}</Button>
+                            <Button fullWidth type="submit" variant="contained" color='primary' sx={{pb: 2}}>{loading? 'Adding...' : 'Add Comment'}</Button>
                         </Box>
                         {replyBool && 
                             <Box sx={{pb:1}}>
-                                <Button fullWidth onClick={cancelReply} variant='contained'>Cancel Reply</Button>
+                                <Button fullWidth onClick={cancelReply} variant='outlined' >Cancel Reply</Button>
                             </Box>
                         }
                     </Grid>

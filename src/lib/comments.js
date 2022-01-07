@@ -6,10 +6,49 @@ const client = createClient({
     accessToken: process.env.REACT_APP_CONTENTFUL_PAT
 })
 
+export async function getCommentsFn(id, context, callback){
+    let postComments = [];
+    await client.getSpace(process.env.REACT_APP_SPACE_ID)
+    .then(space => space.getEnvironment('master'))
+    .then(environment => environment.getEntry(id))
+    .then(entry => {
+        // If no comments exist
+        if (entry.fields.comments === undefined) {
+            // Creates JSON to store comments
+            entry.fields.comments = { "en-US": { comments: [] }}
+
+            //Update entry
+            return entry.update();
+        } else {
+            // Grabs comments
+            // console.log(entry);
+            entry.fields.comments["en-US"].comments.forEach(comment => {
+                postComments.push(comment)
+            })
+            // console.log(postComments);
+        }
+    })
+
+    return postComments;
+    // .then(() => {
+
+    //     return postComments;
+    //     callback(null, {
+    //         statusCode: 200,
+    //         body: JSON.stringify({
+    //             comments: postComments
+    //         })
+    //     })
+    // })
+
+
+}
+
 export async function postCommentsFn(data, context, callback){
     const { name, handle, message, ID, reply, replyID } = data;
     let postComments = [];
 
+    // Gets comments
     await client.getSpace(process.env.REACT_APP_SPACE_ID)
     .then(space => space.getEnvironment('master'))
     .then(environment => environment.getEntry(ID))
@@ -43,16 +82,16 @@ export async function postCommentsFn(data, context, callback){
         })
     }
 
-
+    // Updates and publishes comments
     await client.getSpace(process.env.REACT_APP_SPACE_ID)
-    .then(space => space.getEnvironment('master'))
-    .then(environment => environment.getEntry(ID))
-    .then(entry => {
-        // Update Comments
+    .then((space) => space.getEnvironment('master'))
+    .then((environment) => environment.getEntry(ID))
+    .then((entry) => { 
+        // Adds updated comments
         entry.fields.comments = { "en-US": {comments: postComments } }
 
-        // Update Post
-        return entry.update();
+        // Updates comments on Contentful
+        return entry.update()
     })
     .catch(console.error);
 

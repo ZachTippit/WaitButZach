@@ -45,6 +45,7 @@ exports.handler = function(event, context, callback) {
           })
         }
       })
+
     await client
       .getSpace(process.env.REACT_APP_SPACE_ID)
       .then(space => space.getEnvironment("master"))
@@ -53,9 +54,11 @@ exports.handler = function(event, context, callback) {
         // Update comments
         entry.fields.comments = { "en-US": { comments: postComments } }
         // Update post
-        return entry.update()
+        entry.publish();
       })
+      .then((entry) => console.log(`Entry ${entry.sys.id} published.`))
       .catch(console.error)
+      
     // Callback with updated comments to update state
     callback(null, {
       statusCode: 200,
