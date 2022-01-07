@@ -19,8 +19,8 @@ const FeaturedContent = ({id, pic, title, description, date, tags, articleSelect
                         <Typography variant='body1' sx={{fontSize: '0.75rem'}}><i>Tags:</i></Typography>
                     </Grid> */}
                     {tags !== [] && tags.map((tag, index) => (
-                        <Grid item xs md={2} sx={{mr: 1, ml: 1}} alignSelf='center'>
-                            <img src={badgeMaker(tag.sys.id)} alt={tag.sys.id} key={index} style={{display: 'block', margin:'auto', textAlign: 'center' }}/>
+                        <Grid item xs md={2} sx={{mr: 1, ml: 1}} alignSelf='center' key={index}>
+                            <img src={badgeMaker(tag.sys.id)} alt={tag.sys.id} style={{display: 'block', margin:'auto', textAlign: 'center' }}/>
                         </Grid>))}
                 </Grid>
                 <div className={classes.featuredContentDescription}>
