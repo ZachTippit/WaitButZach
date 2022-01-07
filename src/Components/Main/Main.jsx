@@ -7,7 +7,7 @@ import useStyles from '../styles'
 
 import { getArticle } from '../../lib/article.js'
 
-const Main = ({articles, articleSelect, fetchArticle}) => {
+const Main = ({ articles, articleSelect, fetchArticle }) => {
     const classes = useStyles();
     
     // const [article, setArticle] = useState();

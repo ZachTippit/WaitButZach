@@ -8,7 +8,6 @@ import { getPost, getPosts } from './lib/contentful'
 function App() {
   const classes = useStyles();
 
-
   const [articles, setArticles] = useState();
   const [article, setArticle] = useState();
 
@@ -19,6 +18,7 @@ function App() {
 
   useEffect(() => {
     fetchArticles();
+    // console.log(articles);
   }, [])
 
   // useEffect(() => {
@@ -37,17 +37,11 @@ function App() {
     setArticle(ARTICLE);
   }
 
-  // const fetchArticle = async(id) => {
-  //   const ARTICLE = await getPost(id);
-  //   setArticle(ARTICLE);
-  //   console.log(article);
-  // }
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route index element={<Main articles={articles} articleSelect={getPost} fetchArticle={findArticle}/>} />
+          <Route index element={<Main articles={articles} articleSelect={getPost} fetchArticle={findArticle} />} />
           <Route path='about' element={<About />} />
           <Route path='articles' element={<ArticlesIndex articles={articles} findArticle={findArticle}/>} />
           <Route path='article/:slug' element={<Article articles={articles} article={article} findArticle={findArticle} fetchAndFindArticle={fetchAndFindArticle} />} />

@@ -25,7 +25,7 @@ const ArticlesIndex = ({articlesData, findArticle}) => {
         }
 
         getArticles();
-        console.log(articles);
+        // console.log(articles);
     }, [])
 
     const handleArticleSelect = async(slug) => {
@@ -48,6 +48,7 @@ const ArticlesIndex = ({articlesData, findArticle}) => {
                                 title={article.fields.title}
                                 description={article.fields.subtitle}
                                 date={article.fields.datePublished} 
+                                tags={article.metadata.tags}
                                 findArticle={(e) => handleArticleSelect(article.fields.URLtitle)}/>
                         </Link>
                     )))}

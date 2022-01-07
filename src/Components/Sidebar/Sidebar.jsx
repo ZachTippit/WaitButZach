@@ -57,7 +57,9 @@ const Sidebar = () => {
                     </div>
                 </div>
                 {/* <div style={{width: '100%'}}>
-                    <ColorButton className={classes.sidebarCard} variant="contained" size='large'><b>Random Post Button</b></ColorButton>
+                    <Link to={`article/${content.fields.URLtitle}`} key={content.sys.id} style={{textDecoration: 'none', color: 'inherit'}}>
+                        <ColorButton className={classes.sidebarCard} variant="contained" size='large'><b>Random Post Button</b></ColorButton>
+                    </Link>
                 </div> */}
                 <div style={{width: '100%'}}>
                     <SideProjectCard />

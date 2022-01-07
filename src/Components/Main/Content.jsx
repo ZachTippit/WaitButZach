@@ -7,15 +7,14 @@ import { Link } from 'react-router-dom'
 import { getAllArticles } from '../../lib/article.js'
 
 
-const Content = ({articles, articleSelect, fetchArticle}) => {
+const Content = ({articles, fetchArticle}) => {
 
     const classes = useStyles();
     const [content, setContent] = useState([]);
 
-    useEffect(async () => {
-        const contentArray2 = await getAllArticles();
-        setContent(contentArray2);
-      }, [])
+    // useEffect(() => {
+    //     console.log(articles);
+    // }, [,articles])
 
     const handleArticleSelect = async(id) => {
         await fetchArticle(id);
@@ -23,7 +22,7 @@ const Content = ({articles, articleSelect, fetchArticle}) => {
 
     return (
         <div>
-            { content.map((content,index) => ( 
+            { articles.map((content,index) => ( 
                 index===0 ?
                     <div key={content.sys.id}>
                         <div className={classes.articlesHeader}>
@@ -36,6 +35,7 @@ const Content = ({articles, articleSelect, fetchArticle}) => {
                             pic={content.fields.headerImage.fields.file.url}
                             title={content.fields.title} description={content.fields.subtitle}
                             date={content.fields.datePublished}
+                            tags={content.metadata.tags}
                             articleSelect={(e) => handleArticleSelect(content.fields.URLtitle)}
                             />
                         </Link>
@@ -53,6 +53,7 @@ const Content = ({articles, articleSelect, fetchArticle}) => {
                             title={content.fields.title}
                             description={content.fields.subtitle}
                             date={content.fields.datePublished}
+                            tags={content.metadata.tags}
                             articleSelect={(e) => handleArticleSelect(content.fields.URLtitle)} 
                         />    
                     </Link>

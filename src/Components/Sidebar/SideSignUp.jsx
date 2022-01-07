@@ -23,7 +23,7 @@ const SideSignUp = () => {
     }, [])
 
     return (
-        <Card style={{backgroundColor: 'lightBlue'}} className={classes.signUpCard}>
+        <Card style={{backgroundColor: '#000d35', color: 'white'}} className={classes.signUpCard}>
             <CardContent>
                 {isRegistered ? 
                     <Typography variant='body1' align='center'><b>Thank you for subscribing! Check your email for details.</b></Typography> 
@@ -39,8 +39,8 @@ const SideSignUp = () => {
                         <Grid item>
                             <TextField {...register('email')} className={classes.emailInput} id="outlined-basic" label="Email" variant="outlined" />
                         </Grid>
-                        <Grid item>
-                            <Button type="submit" className={classes.w100}>Submit</Button>
+                        <Grid item sx={{pt: 2, pb: 2}}>
+                            <Button type="submit" variant='contained' color='primary' className={classes.w100}>Submit</Button>
                         </Grid>
                     </form>
                 </Grid>
