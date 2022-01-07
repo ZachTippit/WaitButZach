@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({ 
     app: {
-        maxWidth: '1400px',
+        width: '100%',
         margin: 'auto',
         overflowX: 'hidden'
     },
@@ -97,20 +97,6 @@ export default makeStyles((theme) => ({
         paddingTop: '0.5rem',
         height: '50px',
         overflow: 'hidden'
-    },
-
-    contentCard: {
-        width: '100%',
-        padding: '20px',
-        margin: 'auto',
-        paddingTop: '1rem',
-        paddingBottom: '1rem',
-        borderBottom: 'black 1px solid',
-        transition: '0.5s ease-in-out',
-        '&:hover': {
-            cursor: 'pointer',
-            backgroundColor: 'rgba(30,30,30,0.5)',
-        }
     },
 
     contentPicContainer: {
@@ -404,10 +390,6 @@ export default makeStyles((theme) => ({
         margin: 'auto',
         marginTop: '2rem',
         marginBottom: '4rem',
-    },
-
-    contactForm: {
-
     },
 
 
