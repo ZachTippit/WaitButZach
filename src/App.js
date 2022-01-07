@@ -19,7 +19,6 @@ function App() {
 
   useEffect(() => {
     fetchArticles();
-    console.log('doot');
   }, [])
 
   // useEffect(() => {
