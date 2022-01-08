@@ -395,7 +395,7 @@ export default makeStyles((theme) => ({
 
     // Reading List
     readingList: {
-        minHeight: '60vh',
+        minHeight: '62vh',
         paddingBottom: '2rem'
     },
 

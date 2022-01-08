@@ -1,17 +1,12 @@
 import * as React from 'react';
-import { Box, Stack, Typography, Link, IconButton } from '@mui/material'
+import { Box, Stack, Typography, IconButton } from '@mui/material'
+import { Link } from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-
 import useStyles from '../styles';
 
-const Footer = () => {
-
-  const classes = useStyles();
-
-  const pages = [
+const pages = [
     { title: 'Home', link: '/' },
     { title: 'About', link: 'about' },
     { title: 'Articles', link: 'articles' },
@@ -19,6 +14,10 @@ const Footer = () => {
     { title: 'Reading List', link: 'reading' },
     { title: 'Contact', link: 'contact' }
   ];
+
+export default function Footer(){
+
+  const classes = useStyles();
 
 
   return (
@@ -35,9 +34,11 @@ const Footer = () => {
           <Box alignSelf='center'>
             <Typography variant='body2' style={{color: 'white', fontSize: '0.75rem', fontWeight: 'bold'}}>Quick Links</Typography>
             {pages.map((page, index) => (
-                <div>
-                    <Link to={page.link} style={{fontSize: '0.75rem'}} key={index}>{`> ${page.title}`}</Link>  
-                </div>
+                <Link to={page.link} style={{fontSize: '0.75rem'}} key={index}>
+                    <p>
+                        {`> ${page.title}`}
+                    </p>
+                </Link>  
             ))}
           </Box>
           <Box alignSelf='center'>
@@ -46,25 +47,25 @@ const Footer = () => {
           <Box alignSelf='center' sx={{pt: 1}}>
             <div className={classes.socialBtnContainer}>
                 <div className={classes.aboutSocialBtn}>
-                    <Link href="https://github.com/ZachTippit/" target="_blank" >
-                        <IconButton>
+                    <a href="https://github.com/ZachTippit/" target="_blank" >
+                        <IconButton >
                             <GitHubIcon style={{fontSize: 50}}/>
                         </IconButton>
-                    </Link>
+                    </a>
                 </div>
                 <div className={classes.aboutSocialBtn}>
-                    <Link href="https://www.linkedin.com/in/zachtippit/" target="_blank" >
+                    <a href="https://www.linkedin.com/in/zachtippit/" target="_blank" >
                         <IconButton>
                             <LinkedInIcon style={{fontSize: 50}} color='primary'/>
                         </IconButton>
-                    </Link>
+                    </a>
                 </div>
                 <div className={classes.aboutSocialBtn}>
-                    <Link href="https://www.instagram.com/zach_tippit/" target="_blank" >
+                    <a href="https://www.instagram.com/zach_tippit/" target="_blank" >
                         <IconButton>
                             <InstagramIcon style={{fontSize: 50}} color='secondary'/>
                         </IconButton>
-                    </Link>
+                    </a>
                 </div>
             </div>
           </Box>
@@ -72,29 +73,29 @@ const Footer = () => {
 
       {/* Mobile Render */}
       <Stack sx={{ display: { sm: 'flex', md: 'none'}}} direction="column" justifyContent="center" alignItems="center">
-        <Link href='/contact' sx={{pt: 1}}>Contact</Link>
+        <Link to='/contact' sx={{pt: 1}}>Contact</Link>
         <Box alignSelf='center' sx={{pt: 1}}>
             <div className={classes.socialBtnContainer}>
                 <div className={classes.aboutSocialBtn}>
-                    <Link href="https://github.com/ZachTippit/" target="_blank" >
+                    <a to="https://github.com/ZachTippit/" target="_blank" >
                         <IconButton>
                             <GitHubIcon style={{fontSize: 30}}/>
                         </IconButton>
-                    </Link>
+                    </a>
                 </div>
                 <div className={classes.aboutSocialBtn}>
-                    <Link href="https://www.linkedin.com/in/zachtippit/" target="_blank" >
+                    <a to="https://www.linkedin.com/in/zachtippit/" target="_blank" >
                         <IconButton>
                             <LinkedInIcon style={{fontSize: 30}} color='primary'/>
                         </IconButton>
-                    </Link>
+                    </a>
                 </div>
                 <div className={classes.aboutSocialBtn}>
-                    <Link href="https://www.instagram.com/zach_tippit/" target="_blank" >
+                    <a to="https://www.instagram.com/zach_tippit/" target="_blank" >
                         <IconButton>
                             <InstagramIcon style={{fontSize: 30}} color='secondary'/>
                         </IconButton>
-                    </Link>
+                    </a>
                 </div>
             </div>
           </Box>
@@ -106,5 +107,3 @@ const Footer = () => {
     </div>
   );
 }
-
-export default Footer;

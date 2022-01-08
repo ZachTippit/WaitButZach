@@ -4,13 +4,12 @@ import ArticleCard from '../Article/ArticleCard'
 import useStyles from '../styles'
 import { Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
-import { getAllArticles } from '../../lib/article.js'
 
 
 const Content = ({articles, fetchArticle}) => {
 
     const classes = useStyles();
-    const [content, setContent] = useState([]);
+    const [page, setPage] = useState(1);
 
     // useEffect(() => {
     //     console.log(articles);
@@ -19,6 +18,10 @@ const Content = ({articles, fetchArticle}) => {
     const handleArticleSelect = async(id) => {
         await fetchArticle(id);
     }
+
+    useEffect(() => {
+
+    }, [page])
 
     return (
         <div>

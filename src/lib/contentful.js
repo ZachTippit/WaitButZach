@@ -15,8 +15,12 @@ export async function getPost(slug){
     return Response;
 }
 
-export async function getPosts(){
-    const articles = client.getEntries().then(response => response.items);
+export async function getPosts(page=15){
+    const articles = client.getEntries({
+        limit: 10,
+        skip: (page-1)*10
+    })
+    .then(response => response.items);
 
     (await articles).map(article => {
         article.fields.URLtitle = paramCase(article.fields.title)

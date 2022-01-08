@@ -1,18 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import useStyles from './Components/styles';
-import {  Main, About, Article, Articles, Layout, ArticlesIndex, ReadingList, Projects, Contact } from './Components';
-import { BrowserRouter, Routes, Route, useParams, useNavigate } from 'react-router-dom'
+import { Layout, Main, About, Article, Articles, Projects, ReadingList, Contact } from './Components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { getPost, getPosts } from './lib/contentful'
 
 function App() {
-  const classes = useStyles();
 
   const [articles, setArticles] = useState();
   const [article, setArticle] = useState();
 
+
   const fetchArticles = async () => {
-    const articlesData = await getPosts();
+    const articlesData = await getPosts(1);
     setArticles(articlesData);
   }
 
@@ -24,6 +23,11 @@ function App() {
   // useEffect(() => {
   //   console.log(article);
   // }, [,article])
+
+  // const handlePageSet = (pageNum) => {
+
+  //   setPage(pageNum);
+  // }
 
 
   const findArticle = (slug) => {
@@ -43,7 +47,7 @@ function App() {
         <Route path="/" element={<Layout />} >
           <Route index element={<Main articles={articles} articleSelect={getPost} fetchArticle={findArticle} />} />
           <Route path='about' element={<About />} />
-          <Route path='articles' element={<ArticlesIndex articles={articles} findArticle={findArticle}/>} />
+          <Route path='articles' element={<Articles articles={articles} findArticle={findArticle}/>} />
           <Route path='article/:slug' element={<Article articles={articles} article={article} findArticle={findArticle} fetchAndFindArticle={fetchAndFindArticle} />} />
           <Route path='projects' element={<Projects />} />
           <Route path='reading' element={<ReadingList />} />
