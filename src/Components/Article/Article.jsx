@@ -5,9 +5,9 @@ import CommentInput from './CommentInput'
 import useStyles from '../styles';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
-import { getArticle } from '../../lib/article'
 import { getCommentsFn, postCommentsFn } from '../../lib/comments'
-import axios from 'axios'
+
+import ShareBar from './Subcomponents/ShareBar';
 
 
 const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
@@ -191,6 +191,7 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
                     <Typography sx={{mt: 2, color: '#333'}} variant='h4'><b>{article.fields.title}</b></Typography>
                     <Typography variant='body2' sx={{color: '#111', pl: 2, mt: 1}}>{article.fields.subtitle}</Typography>
                     <Typography gutterBottom variant='body2' sx={{mt: 1, pb: 2, fontSize: '0.625rem', pl: 2}}><i>First published: {article.fields.datePublished}<span style={{paddingRight: '2rem'}} />By Zach Tippit</i></Typography>
+                    <ShareBar articleURL={location.pathname}/>
                     <Divider variant="middle" sx={{mb: 4}}/>
                     {documentToReactComponents(article.fields.articleBody)}
                     <Divider variant="middle" sx={{mt: 4, mb: 4}}/>

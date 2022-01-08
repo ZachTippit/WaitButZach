@@ -516,7 +516,9 @@ export default makeStyles((theme) => ({
     // Footer
 
     footer: {
-        minHeight: '80px',
+        minHeight: '120px',
+        paddingTop: '2rem',
+        paddingBottom: '2rem',
         width: '100%',
         margin: 'auto',
         backgroundColor: '#333',

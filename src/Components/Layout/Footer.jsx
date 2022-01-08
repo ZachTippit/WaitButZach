@@ -11,6 +11,16 @@ const Footer = () => {
 
   const classes = useStyles();
 
+  const pages = [
+    { title: 'Home', link: '/' },
+    { title: 'About', link: 'about' },
+    { title: 'Articles', link: 'articles' },
+    { title: 'Projects', link: 'projects' },
+    { title: 'Reading List', link: 'reading' },
+    { title: 'Contact', link: 'contact' }
+  ];
+
+
   return (
     <div className={classes.footer}>
         {/* Desktop Render */}
@@ -23,10 +33,15 @@ const Footer = () => {
           }}
         >
           <Box alignSelf='center'>
-            <Link href='/contact'>Contact</Link>
+            <Typography variant='body2' style={{color: 'white', fontSize: '0.75rem', fontWeight: 'bold'}}>Quick Links</Typography>
+            {pages.map((page, index) => (
+                <div>
+                    <Link to={page.link} style={{fontSize: '0.75rem'}} key={index}>{`> ${page.title}`}</Link>  
+                </div>
+            ))}
           </Box>
           <Box alignSelf='center'>
-            <p style={{color:'white'}}>©2021 Zach Tippit</p>
+            <p style={{color:'white'}}>©2022 Zach Tippit</p>
           </Box>
           <Box alignSelf='center' sx={{pt: 1}}>
             <div className={classes.socialBtnContainer}>
