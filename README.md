@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Blog/Portfolio Site for www.ZachTippit.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome! This is the public repo for my portfolio site. It is deployed through Netlify on CI.
 
-## Available Scripts
+Check it out at [ZachTippit.com](https://www.zachtippit.com)
 
-In the project directory, you can run:
+## Tech Used
 
-### `npm start`
+The website was built from scratch using React and Material UI on the front-end. React-router-dom is used for routing. ConvertKit is used for subscriptions, SendGrid for email comms and Contentful as a headless CMS!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Routes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Just a brief overview of what content you can find on the site!
 
-### `npm test`
+  > Home: Main landing page, hosts articles, sign up form and quicklinks
+  > About: Self-explanatory
+  > Articles: Routing page for different published articles
+  > Reading List: WIP page to share content that I've found inspiring!
+  > Contact: Sign up form either sending a convertkit sign up or Twilio email to me personally.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Future Inclusions
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### At least as of 1/9/22
+Here are just a few things on the radar 
+  > Adding analytics
+  > Random post button: click on it to go to a random post!
+  > Anthology page -- basically an overview router for grouped posts
+  > Search functionality across articles
+  > Formatting some stuff! The site is getting there but it isn't quite to the polished standard that I'd prefer.
+  > Full accessibility implementation.
