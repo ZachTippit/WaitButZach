@@ -14,8 +14,10 @@ const Articles = ({articlesData, findArticle}) => {
 
     useEffect(() => {
         async function getArticles(){
-            const ARTICLES = await getPosts(page);
-            setArticles(ARTICLES);
+            if(!articles){
+                const ARTICLES = await getPosts(page);
+                setArticles(ARTICLES);
+            }
         }
 
         getArticles();

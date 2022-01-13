@@ -15,7 +15,7 @@ export async function getPost(slug){
     return Response;
 }
 
-export async function getPosts(page=15){
+export async function getPosts(page=1){
     const articles = client.getEntries({
         limit: 10,
         skip: (page-1)*10

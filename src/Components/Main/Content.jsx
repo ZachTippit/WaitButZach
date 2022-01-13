@@ -16,6 +16,7 @@ const Content = ({articles, fetchArticle}) => {
     // }, [,articles])
 
     const handleArticleSelect = async(id) => {
+        console.log('Called from Content')
         await fetchArticle(id);
     }
 

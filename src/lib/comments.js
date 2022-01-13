@@ -30,18 +30,6 @@ export async function getCommentsFn(id, context, callback){
     })
 
     return postComments;
-    // .then(() => {
-
-    //     return postComments;
-    //     callback(null, {
-    //         statusCode: 200,
-    //         body: JSON.stringify({
-    //             comments: postComments
-    //         })
-    //     })
-    // })
-
-
 }
 
 export async function postCommentsFn(data, context, callback){

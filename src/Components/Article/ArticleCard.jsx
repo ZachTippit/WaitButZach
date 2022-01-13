@@ -4,14 +4,12 @@ import CommentIcon from '@mui/icons-material/Comment';
 import { capitalCase } from 'change-case'
 import useStyles from '../styles'
 
-import { getArticle } from '../../lib/article.js'
-
 const ArticleCard = ({id, pic, title, description, date, tags, articleSelect}) => {
     const classes = useStyles();
 
     return (
         <div className={classes.articleCard}>
-            <Grid container direction="row" alignItems="center" component={Button} onClick={() => getArticle()} style={{textDecoration: 'none', color: '#333'}}>
+            <Grid container direction="row" alignItems="center" component={Button} style={{textDecoration: 'none', color: '#333'}}>
                 <Grid item xs={12} sm={4} md={4} zeroMinWidth>
                     <div className={classes.contentPicContainer}>
                         <img src={pic} alt={`${pic}`} className={classes.contentPic}/>

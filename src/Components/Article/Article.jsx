@@ -10,7 +10,7 @@ import { getCommentsFn, postCommentsFn } from '../../lib/comments'
 import ShareBar from './Subcomponents/ShareBar';
 
 
-const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
+const Article = ({article, articles, findArticle, fetchAndFindArticle, fetchArticle, fetchArticles}) => {
     const params = useParams();
     const location = useLocation();
     const navigate = useNavigate();
@@ -26,27 +26,20 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle}) => {
     const [msg, setMsg] = useState();
 
     useEffect(() => {
-      // console.log(article, location.pathname, params.slug)
-        async function fetchArticle(slug){
-            if(!articles){
-                setArticle(await fetchAndFindArticle(slug));
-            } else{
-                setArticle(await findArticle(slug));
-            }    
-        }
-
-        fetchArticle(params.slug);
-        
-    }, [,article, location.pathname, params.slug])
+      fetchArticle(params.slug)
+    }, [,articles])
     
     useEffect(() => {
       window.scrollTo(0, 0)
       async function fetchComments(article){
+        if(typeof article !== 'undefined'){
+          // console.log(articleData);
         const id = article.sys.id
         // console.log(id);
         const commentsData = await getCommentsFn(id);
         setComments(commentsData)
             // setComments(article.fields.comments.comments)
+        }
       }    
       fetchComments(article);
       // console.log(comments);

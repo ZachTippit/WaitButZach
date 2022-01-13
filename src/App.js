@@ -8,17 +8,26 @@ function App() {
 
   const [articles, setArticles] = useState();
   const [article, setArticle] = useState();
+  const [articleSlug, setArticleSlug] = useState();
 
 
   const fetchArticles = async () => {
-    const articlesData = await getPosts(1);
+    const articlesData = await getPosts();
     setArticles(articlesData);
+  }
+
+  const fetchArticle = async (slug) => {
+    // console.log(slug, articles);
+    if(typeof articles != "undefined"){
+      let ARTICLE = articles.find(article => article.fields.URLtitle === slug);
+      setArticle(ARTICLE);
+    }
   }
 
   useEffect(() => {
     fetchArticles();
-    // console.log(articles);
-  }, [])
+    // console.log('Called');
+  }, [,articleSlug])
 
   // useEffect(() => {
   //   console.log(article);
@@ -29,26 +38,14 @@ function App() {
   //   setPage(pageNum);
   // }
 
-
-  const findArticle = (slug) => {
-    let ARTICLE = articles.find(article => article.fields.URLtitle === slug);
-    setArticle(ARTICLE);
-  }
-
-  const fetchAndFindArticle = async (slug) => {
-    const articlesData = await getPosts();
-    let ARTICLE = articlesData.find(article => article.fields.URLtitle === slug);
-    setArticle(ARTICLE);
-  }
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />} >
-          <Route index element={<Main articles={articles} articleSelect={getPost} fetchArticle={findArticle} />} />
+          <Route index element={<Main articles={articles} articleSelect={getPost} fetchArticle={fetchArticle} />} />
           <Route path='about' element={<About />} />
-          <Route path='articles' element={<Articles articles={articles} findArticle={findArticle}/>} />
-          <Route path='article/:slug' element={<Article articles={articles} article={article} findArticle={findArticle} fetchAndFindArticle={fetchAndFindArticle} />} />
+          <Route path='articles' element={<Articles articles={articles} fetchArticle={fetchArticle}/>} />
+          <Route path='article/:slug' element={<Article article={article} articles={articles} fetchArticle={fetchArticle} fetchArticles={fetchArticles} />} />
           <Route path='projects' element={<Projects />} />
           <Route path='reading' element={<ReadingList />} />
           <Route path='contact' element={<Contact />} />
