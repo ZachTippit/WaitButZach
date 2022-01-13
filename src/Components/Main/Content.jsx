@@ -38,7 +38,7 @@ const Content = ({articles, fetchArticle}) => {
                             id={content.sys.id}
                             pic={content.fields.headerImage.fields.file.url}
                             title={content.fields.title} description={content.fields.subtitle}
-                            date={content.fields.datePublished}
+                            date={content.fields.published}
                             tags={content.metadata.tags}
                             articleSelect={(e) => handleArticleSelect(content.fields.URLtitle)}
                             />
@@ -56,7 +56,7 @@ const Content = ({articles, fetchArticle}) => {
                             pic={content.fields.headerImage.fields.file.url}
                             title={content.fields.title}
                             description={content.fields.subtitle}
-                            date={content.fields.datePublished}
+                            date={content.fields.published}
                             tags={content.metadata.tags}
                             articleSelect={(e) => handleArticleSelect(content.fields.URLtitle)} 
                         />    

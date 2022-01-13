@@ -43,7 +43,7 @@ const Articles = ({articlesData, findArticle}) => {
                                 pic={article.fields.headerImage.fields.file.url}
                                 title={article.fields.title}
                                 description={article.fields.subtitle}
-                                date={article.fields.datePublished} 
+                                date={article.fields.published} 
                                 tags={article.metadata.tags}
                                 findArticle={(e) => handleArticleSelect(article.fields.URLtitle)}/>
                         </Link>

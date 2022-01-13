@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography, Button, Box } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import CommentIcon from '@mui/icons-material/Comment';
 import { capitalCase } from 'change-case'
 import useStyles from '../styles'
@@ -9,17 +9,16 @@ const ArticleCard = ({id, pic, title, description, date, tags, articleSelect}) =
 
     return (
         <div className={classes.articleCard}>
-            <Grid container direction="row" alignItems="center" component={Button} style={{textDecoration: 'none', color: '#333'}}>
-                <Grid item xs={12} sm={4} md={4} zeroMinWidth>
+            <Grid container direction="row" alignItems="center" style={{textDecoration: 'none', color: '#333'}}>
+                <Grid item xs={12} md={4} zeroMinWidth>
                     <div className={classes.contentPicContainer}>
                         <img src={pic} alt={`${pic}`} className={classes.contentPic}/>
                     </div>
                 </Grid>
-                <Grid item xs>
-                    <Typography variant='h6'><b>{title}</b></Typography>
-                    <div className={classes.articleCardDescription}>
-                        <Typography variant='body2' style={{overflow: 'hidden', textOverflow: 'ellipsis', fontSize: '0.75rem'}}><i>Published: {date}</i></Typography>
-                    </div>
+                <Grid item xs={0} md></Grid>
+                <Grid item xs={12} md={6}>
+                    <Typography variant='h6' align='center'><b>{title}</b></Typography>
+                    <Typography variant='body2' style={{overflow: 'hidden', textOverflow: 'ellipsis', fontSize: '0.75rem'}}><i>Published: {date}</i></Typography>
                     <Grid container direction='row' sx={{ display: 'flex', justifyContent: 'center', pt: 1, pb: 1, width: '90%', margin: 'auto'}} className={classes.articleCardDescription}>
                         {/* <Grid item md={2} sx={{display: {xs: 'none', sm: 'none', md: 'inherit' }, pl: 2}} alignSelf='start'>
                             <Typography variant='body1' sx={{fontSize: '0.75rem'}}><i>Tags:</i></Typography>
@@ -31,10 +30,10 @@ const ArticleCard = ({id, pic, title, description, date, tags, articleSelect}) =
                     </Grid>
                     <div className={classes.articleCardDescription}>
                         <Typography variant='body2' style={{overflow: 'hidden', textOverflow: 'ellipsis', width: '80%', margin: 'auto'}}>{description}</Typography>
-                    </div>
-                    
+                    </div> 
                 </Grid>
-                <Grid item display={{xs: 'none', sm: 'flex'}}>
+                <Grid item xs={0} md></Grid>
+                <Grid item display={{xs: 'none', md: 'flex'}}>
                     <CommentIcon color="action" size="small" />
                 </Grid>
             </Grid>

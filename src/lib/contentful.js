@@ -18,13 +18,17 @@ export async function getPost(slug){
 export async function getPosts(page=1){
     const articles = client.getEntries({
         limit: 10,
-        skip: (page-1)*10
+        skip: (page-1)*10,
+        content_type: 'article',
+        order: '-fields.published'
     })
     .then(response => response.items);
 
     (await articles).map(article => {
         article.fields.URLtitle = paramCase(article.fields.title)
     })
+
+    console.log(articles);
         
     return articles;
 }
