@@ -9,7 +9,8 @@ const client = createClient({
 export async function getPost(slug){
     const Response = client.getEntries({
         "fields.slug": slug,
-        content_type: "blogPost"
+        content_type: "blogPost",
+        include: 10
     }).then(response => response.json())
 
     return Response;

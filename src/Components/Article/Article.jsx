@@ -1,16 +1,16 @@
 import React, { useState, useEffect, Suspense } from 'react'
+import ArticleBody from './ArticleBody'
 import { Typography, Divider, Grid } from '@mui/material';
 import Comments from './Comments';
 import CommentInput from './CommentInput'
 import useStyles from '../styles';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { getCommentsFn, postCommentsFn } from '../../lib/comments'
 
 import ShareBar from './Subcomponents/ShareBar';
 
 
-const Article = ({article, articles, findArticle, fetchAndFindArticle, fetchArticle, fetchArticles}) => {
+const Article = ({article, articles, fetchArticle}) => {
     const params = useParams();
     const location = useLocation();
     const navigate = useNavigate();
@@ -33,7 +33,7 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle, fetchArti
       window.scrollTo(0, 0)
       async function fetchComments(article){
         if(typeof article !== 'undefined'){
-          // console.log(articleData);
+          console.log(articleData);
         const id = article.sys.id
         // console.log(id);
         const commentsData = await getCommentsFn(id);
@@ -186,7 +186,7 @@ const Article = ({article, articles, findArticle, fetchAndFindArticle, fetchArti
                     <Typography gutterBottom variant='body2' sx={{mt: 1, pb: 2, fontSize: '0.625rem', pl: 2}}><i>First published: {article.fields.published}<span style={{paddingRight: '2rem'}} />By Zach Tippit</i></Typography>
                     <ShareBar articleURL={location.pathname}/>
                     <Divider variant="middle" sx={{mb: 4}}/>
-                    {documentToReactComponents(article.fields.articleBody)}
+                    <ArticleBody article={article.fields.articleBody} />
                     <Divider variant="middle" sx={{mt: 4, mb: 4}}/>
                   </>
                 }
