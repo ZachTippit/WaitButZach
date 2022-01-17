@@ -337,6 +337,23 @@ export default makeStyles((theme) => ({
         }
     },
 
+    code: {
+        backgroundColor: '#eee',
+        padding: '1rem',
+        overflowX: 'scroll',
+        [theme.breakpoints.down('md')]: {
+            fontSize: '0.75rem'
+        }
+    },
+
+    articleImageBlock: {
+        width: '100%',
+        height: '100%',
+        [theme.breakpoints.up('md')]: {
+            width: '75%'
+        }
+    },
+
 
     // Projects
 

@@ -11,7 +11,7 @@ const pages = [
   { title: 'About', link: 'about' },
   { title: 'Articles', link: 'articles' },
   { title: 'Projects', link: 'projects' },
-  { title: 'Reading List', link: 'reading' },
+  // { title: 'Reading List', link: 'reading' },
   { title: 'Contact', link: 'contact' }
 ];
 

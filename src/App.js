@@ -47,7 +47,7 @@ function App() {
           <Route path='articles' element={<Articles articles={articles} fetchArticle={fetchArticle}/>} />
           <Route path='article/:slug' element={<Article article={article} articles={articles} fetchArticle={fetchArticle} fetchArticles={fetchArticles} />} />
           <Route path='projects' element={<Projects />} />
-          <Route path='reading' element={<ReadingList />} />
+          {/* <Route path='reading' element={<ReadingList />} /> */}
           <Route path='contact' element={<Contact />} />
           <Route path="*" element={<Main />} />
         </Route>
