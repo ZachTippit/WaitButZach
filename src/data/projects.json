@@ -29,7 +29,7 @@
     },
     {
         "title": "Old Portfolio",
-        "link": "https://zachtippit.com",
+        "link": "https://zachsoldportfolio.netlify.app/",
         "tech": ["Node.js", "Handlebars"],
         "description": "It was fun while it lasted, but this bare bones site no longer represents my skill level. Give it a look to see the progression.",
         "pic": "../assets/images/old.PNG"

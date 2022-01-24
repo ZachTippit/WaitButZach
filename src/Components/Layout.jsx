@@ -19,7 +19,6 @@ const Layout = () => {
             <TopLogo />
             <Navbar />
             <Outlet />
-            {/* <ShareBar articleURL={articleURL}/> */}
             <Footer />
         </div>
     )

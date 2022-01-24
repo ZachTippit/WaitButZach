@@ -1,20 +1,3 @@
-// export const handleAddSubscriber = async ({firstName, lastName, email, comment, subscribe=true}) => {
-
-//     const requestOptions = {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             contactFormData: { firstName, lastName, email, comment },
-//             isSubscribing: subscribe
-//         })
-//     };
-
-//     const Response = await fetch('https://zdt-portfolio-backend.herokuapp.com/contact', requestOptions)
-//     console.log(Response);
-    
-//     return Response.ok;
-// }
-
 export const addSubscriber = async ({firstName, lastName, email, comment}) => {
     const requestOptions = {
         method: 'POST',
