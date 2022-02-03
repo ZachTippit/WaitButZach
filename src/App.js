@@ -57,7 +57,3 @@ function App() {
 }
 
 export default App;
-
-// <Navbar />
-// <Outlet />
-// <Footer />
