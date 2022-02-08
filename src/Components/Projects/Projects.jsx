@@ -86,7 +86,8 @@ const Projects = () => {
             <div className={classes.prjHeader}>
                 <Typography variant='h4' className={classes.prjText}>Projects</Typography>
             </div>
-                <Typography variant='body1' className={classes.prjSubhead}>Ah, so you have found your way to my projects page! All of these except for HANSCycle were created between 12/20-1/22. Please <Link href='/contact'>reach out if you have any questions or comments.</Link></Typography>
+                <Typography variant='body1' className={classes.prjSubhead}>Ah, so you have found your way to my projects page! Please <Link href='/contact'>reach out if you have any questions or comments.</Link></Typography>
+                <Typography variant='body1' className={classes.prjSubhead}>There are live sites and </Typography>
 
             { projects.map((content, index) => ( 
                 <Accordion expanded={expanded === `panel${index+1}`} onChange={handleChange(`panel${index+1}`)} key={content.title}>

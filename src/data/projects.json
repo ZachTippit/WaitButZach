@@ -8,7 +8,7 @@
     },
     {
         "title": "Evening's Kingdom",
-        "link": "https://www.eveningskingdom.com/",
+        "link": "https://eveningskingdom.netlify.app/",
         "tech": ["React", "Node.js", "MUI", "ConvertKit"],
         "description": "React & MUI-based site for Paula Schmidt's fantasy series, Evening's Kingdom. By working with the author, we are adding marketing automation tools and analytics in the next update.",
         "pic": "../assets/images/eveningskingdom.PNG"
