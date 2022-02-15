@@ -5,6 +5,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { Typography, Link, Grid, Button } from '@mui/material';
+import clsx from 'clsx';
 
 import * as data from '../../data/projects.json'
 import useStyles from '../styles'
@@ -49,6 +50,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const badgeMaker = (tech) => {
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
     const URL = 'https://img.shields.io/badge/'
     let badge = '';
     switch(tech){
@@ -65,7 +67,7 @@ const badgeMaker = (tech) => {
             badge = `${URL}-${tech}-red`
             break;
         default:
-            badge = `${URL}-${tech}-lightgrey`
+            badge = `${URL}-${tech}-${randomColor}`
             break;
     }
 
@@ -82,13 +84,11 @@ const Projects = () => {
     const classes = useStyles();
 
     return(
-        <div className={classes.projects}>
+        <div className={clsx(classes.projects, 'fade-in-bottom')}>
             <div className={classes.prjHeader}>
                 <Typography variant='h4' className={classes.prjText}>Projects</Typography>
             </div>
                 <Typography variant='body1' className={classes.prjSubhead}>Ah, so you have found your way to my projects page! Please <Link href='/contact'>reach out if you have any questions or comments.</Link></Typography>
-                <Typography variant='body1' className={classes.prjSubhead}>There are live sites and </Typography>
-
             { projects.map((content, index) => ( 
                 <Accordion expanded={expanded === `panel${index+1}`} onChange={handleChange(`panel${index+1}`)} key={content.title}>
                     <AccordionSummary aria-controls={`panel${index+1}-content`} id={`panel${index+1}-header`}>

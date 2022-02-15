@@ -4,6 +4,8 @@ import SideProjectCard from '../Sidebar/SideProjectCard'
 import { Typography, TextField, Grid, Button, Checkbox, FormGroup, FormControlLabel } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { addSubscriber } from '../../lib/email.js';
+import clsx from 'clsx';
+import '../animations.css'
 
 import useStyles from '../styles';
 
@@ -20,7 +22,7 @@ const Contact = () => {
     const onError = (errors, e) => console.log(errors, e);
 
     return (
-        <div className={classes.contactContainer}>
+        <div className={clsx(classes.contactContainer, 'fade-in-bottom')}>
             <div>
                 <form onSubmit={handleSubmit(onSubmit, onError)}>
                     <Grid container spacing={3}>

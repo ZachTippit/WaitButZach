@@ -3,12 +3,14 @@ import { Grid, Typography } from '@mui/material'
 import CommentIcon from '@mui/icons-material/Comment';
 import { capitalCase } from 'change-case'
 import useStyles from '../styles'
+import clsx from 'clsx';
+import '../animations.css';
 
 const ArticleCard = ({id, pic, title, description, date, tags, articleSelect}) => {
     const classes = useStyles();
 
     return (
-        <div className={classes.articleCard}>
+        <div className={clsx(classes.articleCard, 'fade-in-bottom')}>
             <Grid container direction="row" alignItems="center" style={{textDecoration: 'none', color: '#333'}}>
                 <Grid item xs={12} md={4} zeroMinWidth>
                     <div className={classes.contentPicContainer}>

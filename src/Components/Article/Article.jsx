@@ -179,7 +179,7 @@ const Article = ({article, articles, fetchArticle}) => {
                 {!article ? 
                   <h3>It's loading, bucko.</h3> 
                   : 
-                  <>
+                  <div className='fade-in-bottom'>
                     <img src={article.fields.headerImage.fields.file.url} alt={article.fields.headerImage.fields.title} className={classes.articleHeaderPic}/>
                     <Typography sx={{mt: 2, color: '#333'}} variant='h4'><b>{article.fields.title}</b></Typography>
                     <Typography variant='body2' sx={{color: '#111', pl: 2, mt: 1}}>{article.fields.subtitle}</Typography>
@@ -188,7 +188,7 @@ const Article = ({article, articles, fetchArticle}) => {
                     <Divider variant="middle" sx={{mb: 4}}/>
                     <ArticleBody article={article.fields.articleBody} />
                     <Divider variant="middle" sx={{mt: 4, mb: 4}}/>
-                  </>
+                  </div>
                 }
               </div>
               <CommentInput cancelReply={cancelReply} addComment={addComment} replyBool={replyBool} replyName={replyName} msg={msg} loading={loading}/>

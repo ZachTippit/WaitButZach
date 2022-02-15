@@ -4,6 +4,7 @@ import Content  from './Content'
 import Sidebar from '../Sidebar/Sidebar'
 import Article from '../Article/Article'
 import useStyles from '../styles'
+import '../animations.css'
 
 const Main = ({ articles, fetchArticle }) => {
     const classes = useStyles();
@@ -18,12 +19,9 @@ const Main = ({ articles, fetchArticle }) => {
         <>
             <Grid container className={classes.mainContainer} spacing={4}>
                 <Grid item lg={8} md={12} sm={12} xs={12}>
-                    { !articles ? 
-                        <h3>Loading posts! If you can see this have a lovely day :)</h3> : 
-                        <Content articles={articles} fetchArticle={fetchArticle}/> 
-                    }
+                    <Content articles={articles} fetchArticle={fetchArticle}/> 
                 </Grid>
-                <Grid item lg={4} md={12} sm={12} xs={12}>
+                <Grid item lg={4} md={12} sm={12} xs={12} className='fade-in-bottom'>
                     <Sidebar />
                 </Grid>
             </Grid>

@@ -1,8 +1,15 @@
 [
     {
+        "title": "Picodia",
+        "link": "https://www.picodia.app",
+        "tech": ["React", "MUI", "Jest", "Netlify", "Sheets API", "React Cookie"],
+        "description": "Web-based app based on Picross with a new puzzle every day. See how long you can maintain your streak! Can you beat each daily puzzle with all three lives left?",
+        "pic": "../assets/images/picodia.png"
+    },
+    {
         "title": "E-State Mate Services",
         "link": "https://estatemateservices.com/",
-        "tech": ["React", "Node.js", "Bootstrap", "MongoDB", "HubSpot"],
+        "tech": ["React", "Node.js", "Bootstrap", "MongoDB", "HubSpot", "Netlify", "Trello"],
         "description": "Florida-based real estate tech firm splitting web development talents and back-end property data visualization. Currently managing a growing team of developers as we grow!",
         "pic": "../assets/images/estate.PNG"
     },

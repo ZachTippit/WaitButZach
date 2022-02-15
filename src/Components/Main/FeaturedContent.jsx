@@ -1,8 +1,9 @@
 import React from 'react'
 import { Typography, Link, Grid } from '@mui/material'
 import { capitalCase } from 'change-case'
-
+import clsx from 'clsx'
 import useStyles from '../styles'
+import '../animations.css'
 
 const FeaturedContent = ({id, pic, title, description, date, tags, articleSelect}) => {
 
@@ -10,7 +11,7 @@ const FeaturedContent = ({id, pic, title, description, date, tags, articleSelect
 
     return (
         <div>
-            <div className={classes.featuredContent}>
+            <div className={clsx(classes.featuredContent, 'slide-in-fwd-center')}>
                 <img src={pic} className={classes.featuredContentPic} alt={`${pic}`} onClick={() => articleSelect(id)}/>
                 <Typography variant='h5' align='center' onClick={() => articleSelect(id)}>{title}</Typography>
                 <Typography variant='body2' align='center' className={classes.contentDate}><i>Published: {date}</i></Typography>

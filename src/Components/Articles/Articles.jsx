@@ -4,6 +4,8 @@ import ArticleCard from '../Article/ArticleCard';
 import useStyles from '../styles'
 import { Link } from 'react-router-dom'
 import { getPosts } from '../../lib/contentful';
+import clsx from 'clsx'
+import '../animations.css'
 
 const Articles = ({articlesData, findArticle}) => {
 
@@ -31,11 +33,11 @@ const Articles = ({articlesData, findArticle}) => {
     return(
         <>
         
-            <Grid container className={classes.mainContainer} spacing={4}>
+            <Grid container className={clsx(classes.mainContainer, 'fade-in-bottom')} spacing={4}>
                 <Grid item xl></Grid>
                 <Grid item xl={8} lg={12}>
                     <Suspense fallback={<h1>Loading articles...</h1>}>
-                    {!articles ? <h1>Still loading...</h1> : 
+                    {!articles ? <h1></h1> : 
                     (articles.map((article, index) => (
                         <Link key={article.sys.id} to={`/article/${article.fields.URLtitle}`} style={{textDecoration: 'none'}}>
                             <ArticleCard 
