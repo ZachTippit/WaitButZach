@@ -12,7 +12,6 @@ const ImageBlock = ({image}) => {
                 className={classes.articleImageBlock}
                 height='100%'
                 width='100%'
-                maxWidth='300px'
                 alt={image.data.target.fields.description}
             />
         </div>

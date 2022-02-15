@@ -29,7 +29,7 @@ export async function getPosts(page=1){
         article.fields.URLtitle = paramCase(article.fields.title)
     })
 
-    console.log(articles);
+    // console.log(articles);
         
     return articles;
 }

@@ -58,9 +58,9 @@ const Content = ({articles, fetchArticle}) => {
                 <>
                 { articles.map((content,index) => ( 
                     index===0 ?
-                    <></>
+                    <div key={index} />
                     :
-                    <Link to={`article/${content.fields.URLtitle}`} key={content.sys.id} style={{textDecoration: 'none'}}>
+                    <Link to={`article/${content.fields.URLtitle}`} key={index} style={{textDecoration: 'none'}}>
                         <ArticleCard 
                             key={content.sys.id}
                             id={content.sys.id}

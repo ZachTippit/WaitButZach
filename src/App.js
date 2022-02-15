@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { Layout, Main, About, Article, Articles, Projects, ReadingList, Contact } from './Components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import ReactGA from 'react-ga'
 import { getPost, getPosts } from './lib/contentful'
+
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID)
 
 function App() {
 
@@ -26,17 +28,9 @@ function App() {
 
   useEffect(() => {
     fetchArticles();
-    // console.log('Called');
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
   }, [,articleSlug])
-
-  // useEffect(() => {
-  //   console.log(article);
-  // }, [,article])
-
-  // const handlePageSet = (pageNum) => {
-
-  //   setPage(pageNum);
-  // }
 
   return (
     <BrowserRouter>
