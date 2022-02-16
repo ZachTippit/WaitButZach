@@ -27,6 +27,11 @@ function App() {
   }
 
   useEffect(() => {
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
+  }, [])
+
+  useEffect(() => {
     fetchArticles();
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname);
