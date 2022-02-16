@@ -28,14 +28,29 @@ export default makeStyles((theme) => ({
     },
 
     topLogoIMG: {
-        maxHeight: '150px',
-        width: '300px',
+        width: '320px',
         margin: 'auto',
+        paddingBottom: '0',
+        [theme.breakpoints.down('xs')]: {
+            maxHeight: '150px'
+        }   
+    },
+    topLogoIMG: {
+        width: '320px',
+        margin: 'auto',
+        display: 'block',
         paddingBottom: '0',
         [theme.breakpoints.down('xs')]: {
             width: '100%',
             maxHeight: '150px'
         }   
+    },
+
+    topLogoGif: {
+        width: '320px',
+        margin: 'auto',
+        display: 'block',
+        textAlign: 'right'
     },
 
     // Navbar
