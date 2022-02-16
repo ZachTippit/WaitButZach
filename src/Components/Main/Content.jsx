@@ -58,7 +58,7 @@ const Content = ({articles, fetchArticle}) => {
                 <>
                 { articles.map((content,index) => ( 
                     index===0 ?
-                    <div key={index} />
+                        <div key={index} />
                     :
                     <Link to={`article/${content.fields.URLtitle}`} key={index} style={{textDecoration: 'none'}}>
                         <ArticleCard 
