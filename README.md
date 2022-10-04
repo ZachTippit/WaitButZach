@@ -1,4 +1,4 @@
-# Blog/Portfolio Site for www.ZachTippit.com
+# Previous blog/portfolio Site for www.ZachTippit.com
 
 Welcome! This is the public repo for my portfolio site. It is deployed through Netlify on CI.
 
